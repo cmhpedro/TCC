@@ -10,9 +10,9 @@ Hypothesis Engineering offers a philosophical approach to managing uncertainty b
 
 However, Silva et al. empirical research on ArchHypo [2] demonstrated benefits like better collaboration and a structured approach to architectural work and revealed significant adoption challenges. Participants found the technique hard to learn, particularly in mapping risks, specifying hypotheses, and defining action plans. This study highlighted a strong need for better guidance and, crucially, **tool support to manage hypotheses and execute action plans**, which could lessen team dependency on architects.
 
-Therefore, while Hypothesis Engineering provides the philosophy and ArchHypo the framework, a practical, accessible tool is missing to implement this approach in real-world software development effectively. This thesis proposes the development of such a tool.
+Therefore, while Hypothesis Engineering provides the philosophy and ArchHypo the framework, a practical, accessible tool is missing to implement this approach in real-world software development effectively. This capstone proposes the development of such a tool.
 
-## Thesis Goals
+## Capstone Project Goals
 
 The primary goal of this capstone project is to design and develop a software tool that operationalizes the ArchHypo framework, focusing on supporting architectural decision-making under uncertainty. This tool aims to bridge the gap between the theoretical ArchHypo framework and its practical application by addressing the documented needs for better hypothesis management and action plan execution support.
 
@@ -30,7 +30,7 @@ Specific objectives include:
     - Templates or guidance for hypothesis specification.
     - Suggestions or patterns for common technical plan actions based on hypothesis characteristics (allowing for creative solutions).
 
-By achieving these goals, this thesis will provide a tangible solution to the identified gap in tool support for managing architectural uncertainty, making the benefits of the ArchHypo framework more accessible to software development teams.
+By achieving these goals, this capstone will provide a tangible solution to the identified gap in tool support for managing architectural uncertainty, making the benefits of the ArchHypo framework more accessible to software development teams.
 
 ## References
 

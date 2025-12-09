@@ -11,7 +11,7 @@
 
 % Generic colors
 \definecolor{Blackish}{HTML}{232830}
-\definecolor{SandyPaper}{HTML}{FFFCE2}
+\definecolor{SandyPaper}{HTML}{FFFFFF}
 \definecolor{BrownishGreen}{HTML}{5F603A}
 
 % Greeny colors (based on the InterSCity project main color)
@@ -20,7 +20,7 @@
 \definecolor{PastelGreen}{HTML}{73937E}
 
 % Colors defined in the IME-USP visual identity manual
-\definecolor{imeblue}{RGB}{20,45,105}
+\definecolor{imeblue}{HTML}{052E6A}
 \definecolor{imeyellow}{RGB}{230,175,60}
 \definecolor{imered}{RGB}{130,20,60}
 \definecolor{imesoftblue}{RGB}{0,100,160}
@@ -241,12 +241,12 @@
   },
   greeny .value_forbidden:n = true,
   bluey .code:n = {
-      \colorlet{IMEframe}{imesoftblue}
+      \colorlet{IMEframe}{imeyellow}
       \colorlet{IMEbg}{SandyPaper}
       \colorlet{IMElabel}{imeblue}
       \colorlet{IMEtitleBorder}{imeyellow}
       \colorlet{IMEtitlebg}{imeblue}
-      \colorlet{IMEfooterbg}{imesoftblue}
+      \colorlet{IMEfooterbg}{imeblue}
       \togglefalse{IMEgreeny}
       \toggletrue{IMEbluey}
       \togglefalse{IMEsandy}
@@ -1909,6 +1909,9 @@
         righttitle=.6\baselineskip,
         colframe = IMEframe,
         colback = IMEbg,
+        coltitle = imered,
+        colbacktitle = IMEbg,
+        titlerule = 0pt,
     }
 
     \tcbset{
@@ -1923,14 +1926,12 @@
             colback=IMEtitlebg, coltext=white, grow sidewards by = 1.5cm,
             sharp corners, boxsep=10mm, left=.5cm, right=.5cm,
             top=.3\baselineskip, bottom=.3\baselineskip,
-            borderline south={15pt}{-5pt}{IMEtitleBorder},
         },
         footerbox/.style = {
             before upper = \rmfamily\bfseries,
             colback=IMEfooterbg, coltext=white, grow sidewards by = 1.5cm,
             sharp corners, boxsep=4mm, left=1.1cm, right=1.1cm,
             top=.3\baselineskip, bottom=0pt,
-            borderline north={15pt}{-5pt}{IMEtitleBorder},
         },
     }
 

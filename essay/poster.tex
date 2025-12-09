@@ -1,0 +1,204 @@
+\documentclass[a1paper,brazilian,english]{article}
+
+\usepackage{imegoodies}
+\usepackage[poster,hidelinks]{imelooks}
+% \tcbposterset{fontsize = 32pt} % default, mude se necessário
+
+% Diretórios onde estão as figuras; com isso, não é necessário (mas
+% é permitido) colocar o caminho completo em \includegraphics. Note
+% que a extensão nunca é necessária (mas é permitida), ou seja, o
+% resultado é o mesmo com "\includegraphics{figuras/foto.jpeg}",
+% "\includegraphics{foto.jpeg}", "\includegraphics{figuras/foto}"
+% ou "\includegraphics{foto}".
+\graphicspath{{figuras/},{fig/},{logos/},{img/},{images/},{imagens/}}
+
+% Comandos rápidos para mudar de língua:
+% \en -> muda para o inglês
+% \br -> muda para o português
+% \texten{blah} -> o texto "blah" é em inglês
+% \textbr{blah} -> o texto "blah" é em português
+\babeltags{br = brazilian, en = english}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% METADADOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% O arquivo com os dados bibliográficos para biblatex; você pode usar
+% este comando mais de uma vez para acrescentar múltiplos arquivos
+\addbibresource{bibliografia.bib}
+
+% Este comando permite acrescentar itens à lista de referências sem incluir
+% uma referência de fato no texto (pode ser usado em qualquer lugar do texto)
+%\nocite{bronevetsky02,schmidt03:MSc, FSF:GNU-GPL, CORBA:spec, MenaChalco08}
+% Com este comando, todos os itens do arquivo .bib são incluídos na lista
+% de referências
+%\nocite{*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DO POSTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Existem várias packages para criar pôsteres com LaTeX (a0poster, baposter,
+% tikzposter, sciposter...). As mais comuns atualmente são beamerposter
+% e tcolorbox (com sua biblioteca "poster"). Ambas funcionam muito bem;
+% beamerposter é mais familiar (ela simplesmente utiliza beamer com alguns
+% ajustes no tamanho das fontes e do papel), mas com tcolorbox o alinhamento
+% vertical dos elementos é MUITO mais simples, e esta é a solução adotada
+% aqui. Vale muito a pena ler a documentação com "texdoc tcolorbox" e
+% "texdoc tcolorbox-tutorial-poster".
+
+% Um pôster com tcolorbox é composto por blocos (posterboxes) coloridos
+% de tamanho variável; cada bloco pode conter textos ou imagens e um
+% título opcional. O pôster utiliza uma grade de dimensões definidas em
+% \begin{tcposter} com "rows=" e "columns=" para fazer o alinhamento:
+% para cada posterbox, podemos dizer "row=X, column=Y" para definir sua
+% posição. Além disso, podemos dizer "span=A, rowspan=B" para fixar
+% seu tamanho. Sem "span" e "rowspan", uma posterbox tem pelo menos o
+% tamanho de uma célula da grade, mas se seu tamanho natural for maior
+% ela extrapola esse tamanho. "span" e "rowspan" podem ser números
+% não-inteiros (como 0.8 ou 1.4).
+%
+% "\begin{posterbox}" recebe um conjunto de parâmetros opcional e um
+% conjunto de parâmetros obrigatório:
+%
+% "\begin{posterbox}[opcional]{obrigatório}".
+%
+% O conjunto de parâmetros opcional é onde inserimos os parâmetros comuns
+% de tcolorbox, como "adjusted title", "coltext", "titlerule" etc.; o
+% conjunto de parâmetros obrigatório é usado para determinar as dimensões
+% e a posição da posterbox, ou seja, as opções "name", "column", "below",
+% "span" etc.
+%
+% ALINHAMENTO HORIZONTAL
+%
+% É possível definir um poster com 2 colunas e fazer algo como
+%
+% \posterbox{column=1, span=1.3}{blah}
+% \posterbox{column*=2, span=0.7}{blah}
+%
+% A segunda posterbox será alinhada à direita ("column*="), então as
+% duas serão colocadas lado-a-lado sem sobreposições.
+%
+% Na prática, no entanto, é mais fácil fazer como no exemplo abaixo:
+% definimos que o poster tem 12 colunas, o que nos permite dividir
+% sua largura em 2, 3, 4 ou 6 colunas iguais ou diferentes (como
+% 1/2 + 1/2, 2/3 + 1/3, 1/4 + 1/4 + 1/2, 1/4 + 1/6 + 1/4 + 1/3 etc).
+%
+% ALINHAMENTO VERTICAL
+%
+% Embora seja possível alinhar as posterboxes em função da grade na
+% vertical, uma outra possibilidade é utilizar "above", "below" e
+% "between", como no exemplo abaixo: basta associar um nome "blah" a
+% uma determinada posterbox e, em outra, dizer "below=blah". Lembre-se
+% que a posterbox de nome "blah" deve ser definida *antes* que outra
+% possa fazer referência a ela. Também é possível fazer "below=top",
+% "above=bottom" etc. A opção "equal height group" também é muito útil.
+% Nada impede que você use estratégias de alinhamento diferentes para
+% cada posterbox.
+
+% Este modelo define a opção "smallmargins", que diminui a distância
+% entre o conteúdo de uma posterbox e suas bordas. Use com parcimônia!
+
+\begin{document}
+
+\begin{tcbposter}[
+		poster = {
+				% showframe, % muito útil durante a preparação do poster
+				rows = 6, columns = 12, colspacing = 1.2cm, rowspacing = .8cm, }, ]
+
+	\posterbox[titlebox]{name=titlebox, below=top, column=1, span=12}{
+		\begin{minipage}[c]{0.15\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{contents/images/ime.png}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[c]{0.80\textwidth}
+			ArchHypo Tooling: Enabling Practical Hypothesis Engineering for SA\par
+			\vspace{30pt}
+			\normalsize\normalfont
+			Author: Pedro Henrique Mariano Corrêa\par
+			\vspace{4pt}
+			Advisor: José Gonçalves Lima Neto |
+			\vspace{4pt}
+			Co-advisor: Paulo Meirelles
+		\end{minipage}
+	}
+
+	\posterbox[adjusted title = Introduction, equal height group = introduction]
+	{name=introduction, below=titlebox, column=1, span=6}{
+
+		Software Architecture (SA) is the structural foundation essential for system
+		sustainability and long-term viability. In modern, fast-paced environments, SA
+		must be a dynamic, continuous process, moving beyond static blueprints. The
+		core challenge is balancing development speed with quality to ensure
+		sustainable and adaptable architectures. }
+
+	\posterbox[adjusted title = HypoStage: Tool Overview, equal height group = introduction]
+	{name=hypostage-overview, below=titlebox, column=7, span=6}{
+
+		The \textbf{HypoStage} is a tool designed to help software teams manage
+		architectural decisions more effectively in real-world projects. Built as a
+		plugin for Backstage, it makes it easier for developers to document, assess,
+		and track architectural hypotheses using structured guidance. It simplifies the
+		process and reduces dependencies on experts. }
+
+	\posterbox[adjusted title = The ArchHypo Framework]
+	{name=archhypo, below=introduction, column=1, span=12}{
+
+		\begin{itemize}
+			\item \textbf{Hypothesis Engineering}: Uses hypotheses to manage and document architectural
+			      uncertainties.
+			      \vspace{12pt}
+			\item \textbf{Uncertainty vs. Risk}: Focuses on unknowns, not just measurable risks.
+			      \vspace{12pt}
+			\item \textbf{Sources}: Uncertainties arise from requirements or technical solutions.
+			      \vspace{12pt}
+			\item \textbf{Assessment}: Hypotheses are rated by uncertainty level and impact.
+			      \begin{itemize}
+				      \vspace{12pt}
+				      \item Uncertainty Level: How far the team is from proving the hypothesis true or
+				            false. \vspace{12pt}
+				      \item Impact: The effort/consequence required to transition to a different
+				            alternative.
+			      \end{itemize}
+			      \vspace{12pt}
+			\item \textbf{Technical Plan}: Plans aim to reduce key uncertainties or impacts.
+		\end{itemize}
+	}
+
+	\posterbox[adjusted title = HypoStage: the ArchHypo tooling]
+	{name=archhypo-tooling, below=archhypo, column=1, span=12}{
+
+		\centering
+		\includegraphics[width=0.49\textwidth]{contents/images/hypo-stage.png}
+		\includegraphics[width=0.49\textwidth]{contents/images/hypo-stage-hypothesis.png}
+	}
+
+	\posterbox[adjusted title = HypoStage Functionalities]
+	{name=hypostage, below=archhypo-tooling, column=1, span=12}{
+
+		\begin{itemize}
+			\item \textbf{Hypothesis Management}: Create, edit, and track hypothesis lifecycle.
+			      \vspace{12pt}
+			\item \textbf{Uncertainty Assessment}: Evaluate Impact and Uncertainty using structured 1--5 Likert scale.
+			      \vspace{12pt}
+			\item \textbf{Technical Planning}: Define and track technical action planslinked to hypotheses.
+			      \vspace{12pt}
+			\item \textbf{Quality Tracking}: Associate hypotheses with Quality Attributes.
+			      \vspace{12pt}
+			\item \textbf{Visualization \& Evidence}: Track evolution via interactive charts and link to supporting documentation.
+		\end{itemize}
+	}
+
+	\posterbox[footerbox]{name=footerbox, above=bottom, column=1, span=12}{
+		\centering
+		More information: https://github.com/ArchHypo/hypo-stage\par
+		\vspace{12pt}
+		License: LGPL-3.0 }
+
+\end{tcbposter}
+
+\end{document}

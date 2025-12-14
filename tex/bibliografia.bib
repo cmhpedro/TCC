@@ -1,302 +1,143 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% INSERINDO COMENTÁRIOS EM ARQUIVOS .bib %%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% 1. Como em outros arquivos LaTeX, comentários são iniciados por "%" e,
-%    portanto, é preciso usar "\%" para imprimir o caractere "%". Esquecer
-%    disso pode gerar erros difíceis de encontrar!
-%
-% 2. Não é possível inserir comentários dentro de uma entrada, apenas fora.
-%
-% 3. Não é possível incluir o caractere arroba em um comentário.
-%
-% 4. Se quiser desabilitar temporariamente um campo ("comentar" o campo),
-%    troque seu nome para algum nome inválido, como "author-disable".
-%    Se quiser fazer alguma observação permanente dentro de uma entrada,
-%    você também pode usar algum nome de campo inválido, como "lembrete",
-%    ou usar o campo "annotation", que normalmente é ignorado.
-%
-% 5. Se quiser desabilitar temporariamente uma entrada inteira ("comentar" a
-%    entrada), não basta colocar "%" nas linhas correspondentes por causa do
-%    caractere arroba; também é preciso remover a arroba.
-%
-% 6. Na verdade, as regras não são bem essas, mas segui-las é uma boa ideia:
-%    https://tex.stackexchange.com/a/262282
-%
-% Por exemplo, esta entrada está comentada, ou seja, não tem efeito: se
-% houvesse uma referência a ela no texto, a referência ficaria inválida.
-% Observe que, para isso, o caractere arroba foi apagado!
-%
-%Book{JW82,
-% author    = {Richard A. Johnson and Dean W. Wichern},
-% title     = {Applied Multivariate Statistical Analysis},
-% publisher = {Prentice-Hall},
-% year      = {1983}
-%}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% O CAMPO "MONTH" %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% biblatex prefere o uso do campo "date" para definir ano, mês etc. No
-% entanto, se você quiser garantir compatibilidade tanto com biblatex
-% quanto com bibtex, use os campos "year" e "month". Ambos reconhecem
-% diversos formatos para o campo "month", mas apenas um funciona
-% corretamente com os dois: o nome do mês em inglês, abreviado com três
-% letras minúsculas e sem chaves, ou seja:
-%
-% ...
-% author = {Somebody},
-% year = {2011},
-% month = oct,
-% title = {Some title},
-% ...
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Esta entrada não está em uso em tese.tex, apenas em
-% apresentacao.tex, mas isso não é um problema: você pode
-% ter um banco de dados com todos os papers que são de seu
-% interesse e, em um dado texto, citar apenas alguns deles.
-@Manual{CORBA:spec,
- title       = {{CORBA} v3.0 Specification},
- author      = {{Object Management Group}},
- shortauthor = {OMG},
- month       = jul,
- year        = {2002},
- note        = {OMG Document 02-06-33}
+@article{Perry1992,
+author = {Perry, Dewayne E. and Wolf, Alexander L.},
+title = {Foundations for the study of software architecture},
+year = {1992},
+issue_date = {Oct. 1992},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {17},
+number = {4},
+issn = {0163-5948},
+url = {https://doi.org/10.1145/141874.141884},
+doi = {10.1145/141874.141884},
+abstract = {The purpose of this paper is to build the foundation for software architecture. We first develop an intuition for software architecture by appealing to several well-established architectural disciplines. On the basis of this intuition, we present a model of software architecture that consists of three components: elements, form, and rationale. Elements are either processing, data, or connecting elements. Form is defined in terms of the properties of, and the relationships among, the elements --- that is, the constraints on the elements. The rationale provides the underlying basis for the architecture in terms of the system constraints, which most often derive from the system requirements. We discuss the components of the model in the context of both architectures and architectural styles and present an extended example to illustrate some important architecture and style considerations. We conclude by presenting some of the benefits of our approach to software architecture, summarizing our contributions, and relating our approach to other current work.},
+journal = {SIGSOFT Softw. Eng. Notes},
+month = oct,
+pages = {40-52},
+numpages = {13}
 }
 
-@Book{eco:09,
- author   = {Umberto Eco},
- title    = {Como se Faz uma Tese},
- edition  = 22,
- publisher= {Perspectiva},
- note     = {Tradução Gilson Cesar Cardoso de Souza},
- year     = {2009},
+@article{Petersen2015,
+title = {Guidelines for conducting systematic mapping studies in software engineering: An update},
+journal = {Information and Software Technology},
+volume = {64},
+pages = {1-18},
+year = {2015},
+issn = {0950-5849},
+doi = {https://doi.org/10.1016/j.infsof.2015.03.007},
+url = {https://www.sciencedirect.com/science/article/pii/S0950584915000646},
+author = {Kai Petersen and Sairam Vakkalanka and Ludwik Kuzniarz},
+keywords = {Systematic mapping studies, Software engineering, Guidelines},
+abstract = {Context
+Systematic mapping studies are used to structure a research area, while systematic reviews are focused on gathering and synthesizing evidence. The most recent guidelines for systematic mapping are from 2008. Since that time, many suggestions have been made of how to improve systematic literature reviews (SLRs). There is a need to evaluate how researchers conduct the process of systematic mapping and identify how the guidelines should be updated based on the lessons learned from the existing systematic maps and SLR guidelines.
+Objective
+To identify how the systematic mapping process is conducted (including search, study selection, analysis and presentation of data, etc.); to identify improvement potentials in conducting the systematic mapping process and updating the guidelines accordingly.
+Method
+We conducted a systematic mapping study of systematic maps, considering some practices of systematic review guidelines as well (in particular in relation to defining the search and to conduct a quality assessment).
+Results
+In a large number of studies multiple guidelines are used and combined, which leads to different ways in conducting mapping studies. The reason for combining guidelines was that they differed in the recommendations given.
+Conclusion
+The most frequently followed guidelines are not sufficient alone. Hence, there was a need to provide an update of how to conduct systematic mapping studies. New guidelines have been proposed consolidating existing findings.}
 }
 
-@Book{zobel:04,
- author   = {Justin Zobel},
- title    = {Writing for Computer Science: The Art of Effective Communication},
- publisher= {Springer},
- edition  = 2,
- year     = {2004},
+@article{SysMap,
+title = {Deriving architectural models from requirements specifications: A systematic mapping study},
+journal = {Information and Software Technology},
+volume = {109},
+pages = {26-39},
+year = {2019},
+issn = {0950-5849},
+doi = {https://doi.org/10.1016/j.infsof.2019.01.004},
+url = {https://www.sciencedirect.com/science/article/pii/S0950584919300035},
+author = {Eric Souza and Ana Moreira and Miguel Goulão},
+keywords = {Software architecture, Mapping study, Literature review},
+abstract = {Context
+Software architecture design creates and documents the high-level structure of a software system. Such structure, expressed in architectural models, comprises software elements, relations among them, and properties of these elements and relations. Existing software architecture methods offer ways to derive architectural models from requirements specifications. These models must balance different forces that should be analyzed during this derivation process, such as those imposed by different application domains and quality attributes. Such balance is difficult to achieve, requiring skilled and experienced architects.
+Object
+The purpose of this paper is to provide a comprehensive overview of the existing methods to derive architectural models from requirements specifications and offer a research roadmap to challenge the community to address the identified limitations and open issues that require further investigation.
+Method
+To achieve this goal, we performed a systematic mapping study following the good practices from the Evidence-Based Software Engineering field.
+Results
+This study resulted in 39 primary studies selected for analysis and data extraction, from the 2575 initially retrieved.
+Conclusion
+The major findings indicate that current architectural derivation methods rely heavily on the architects’ tacit knowledge (experience and intuition), do not offer sufficient support for inexperienced architects, and lack explicit evaluation mechanisms. These and other findings are synthesized in a research roadmap which results would benefit researchers and practitioners.}
 }
 
-@Book{waz:09,
- author   = {Raul S. Wazlawick},
- title    = {Metodologia de Pesquisa em Ciência da Computação},
- publisher= {Campus},
- edition  = 1,
- year     = {2009},
+@article{ArchHypo,
+  author = {Silva, Kelson and Melegati, Jorge and Silveira, Fabio and Wang, Xiaofeng and Ferreira, Mauricio and Guerra, Eduardo},
+  title = {ArchHypo: Managing Software Architecture Uncertainty Using Hypotheses Engineering},
+  year = {2025},
+  issue_date = {Feb. 2025},
+  publisher = {IEEE Press},
+  volume = {51},
+  number = {2},
+  issn = {0098-5589},
+  url = {https://doi.org/10.1109/TSE.2024.3520477},
+  doi = {10.1109/TSE.2024.3520477},
+  abstract = {Uncertainty is present in software architecture decisions due to a lack of knowledge about the requirements and the solutions involved. However, this uncertainty is usually not made explicit, and decisions can be made based on unproven premises or false assumptions. This paper focuses on a technique called ArchHypo that uses hypotheses engineering to manage uncertainties related to software architecture. It&nbsp;proposes formulating a technical plan based on each hypothesis’ assessment, incorporating measures able to mitigate its impact and reduce uncertainty. To evaluate the proposed technique, this paper reports an application of the technique in a mission-critical project that faced several technical challenges. Conclusions were based on data extracted from the project documentation and a questionnaire answered by all team members. As a result, the application of ArchHypo provided a structured approach to dividing the architectural work through iterations, which facilitated architectural decision-making. However, further research is needed to fully understand its impact across different contexts. On the other hand, the team identified the learning curve and process adjustments required for ArchHypo's adoption as significant challenges that could hinder its widespread adoption. In&nbsp;conclusion, the evidence found in this study indicates that the technique has the potential to provide a suitable way to manage the uncertainties related to software architecture, facilitating the strategic postponement of decisions while addressing their potential impact.},
+  journal = {IEEE Trans. Softw. Eng.},
+  month = feb,
+  pages = {430-448},
+  numpages = {19}
 }
 
-@Book{Higham:98,
- author   = {Nicholas J. Higham},
- title    = {Handbook of Writing for the Mathematical Sciences},
- edition  = 2,
- publisher= {SIAM: Society for Industrial and Applied Mathematics},
- month    = aug,
- year     = {1998},
+@article{UseCase,
+  author={Silva, Kelson and Melegati, Jorge and Wang, Xiaofeng and Ferreira, Mauricio and Guerra, Eduardo},
+  journal={IEEE Software},
+  title={Using Hypotheses to Manage Technical Uncertainty and Architecture Evolution in a Software Start-up},
+  year={2024},
+  volume={41},
+  number={4},
+  pages={7-13},
+  keywords={Uncertainty;Software architecture;Software development management;Software maintenance;Digital arithmetic;Virtual machining;Scalability;Redundancy;User interfaces;Software testing},
+  doi={10.1109/MS.2024.3383628}
 }
 
-@book{Knuth:96,
- author   = {Donald E. Knuth and Tracy Larrabee and Paul M. Roberts},
- title    = {Mathematical Writing},
- publisher= {The Mathematical Association of America},
- month    = sep,
- year     = {1996}
+@inproceedings{Pattern1,
+  author = {Wirfs-Brock, Rebecca and Yoder, Joseph and Guerra, Eduardo},
+  title = {Patterns to develop and evolve architecture during an agile software project},
+  year = {2015},
+  isbn = {9781941652039},
+  publisher = {The Hillside Group},
+  address = {USA},
+  abstract = {The design of the architecture during an agile project is an ongoing activity that takes place in all phases of a project lifecycle. It is important to continue to evolve the architecture in order to keep it suitable for the software system's current needs. This paper documents four patterns for working on and evolving a system's architecture using agile techniques.},
+  booktitle = {Proceedings of the 22nd Conference on Pattern Languages of Programs},
+  articleno = {9},
+  numpages = {18},
+  keywords = {agile, agile architecture, agile methodology, agile software development, architectural spike, architecture, backlog, design spike, patterns, refactoring, software evolution, software qualities, system qualities, technical backlog, technical debt},
+  location = {Pittsburgh, Pennsylvania},
+  series = {PLoP '15}
 }
 
-@InProceedings{alves03:simi,
- author   = {Carlos E. R. Alves and Edson N. Cáceres and Frank Dehne and Siang W. Song},
- title    = {A Parallel Wavefront Algorithm for Efficient Biological Sequence Comparison},
- booktitle= {ICCSA'03: The 2003 International Conference on Computational Science and its Applications},
- year     = {2003},
- pages    = {249-258},
- month    = may,
- publisher= {Springer-Verlag}
+@inproceedings{Pattern2,
+  author = {Silva, Kelson and Adolfo, Luciane Baratto and Coppe, Antonio and Silveira, Fabio Fagundes and Ferreira, Mauricio and Guerra, Eduardo},
+  title = {Patterns for Using Hypothesis Engineering to Manage Architectural Uncertainties},
+  year = {2024},
+  isbn = {9798400716836},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3698322.3698333},
+  doi = {10.1145/3698322.3698333},
+  abstract = {In the evolving landscape of software engineering, managing the uncertainties that impact architectural decisions is paramount for ensuring the resilience and adaptability of software systems. This paper focuses on documenting, as patterns, the foundational practices employed by a technique named ArchHypo, which uses hypothesis engineering to manage uncertainties in software architecture and enhance decision-making processes. By exploring three diverse projects that implement the ArchHypo technique, we delineate a set of patterns that systematically address the complexities of uncertainty. These patterns provide a more systematic structured framework for software architects and developers, enabling them to make uncertainties explicit and manageable, thus facilitating the identification of opportune moments for architectural commitments. The delineated patterns contribute to a structured and informed decision-making process and offer an approach to managing uncertainties tailored to agile development’s dynamic landscape.},
+  booktitle = {Proceedings of the 29th European Conference on Pattern Languages of Programs, People, and Practices},
+  articleno = {26},
+  numpages = {8},
+  series = {EuroPLoP '24}
 }
 
-@Article{MenaChalco08,
- author   = {Jesús P. Mena-Chalco and Helaine Carrer and Yossi Zana and Roberto M. Cesar-Jr.},
- title    = {Identification of Protein Coding Regions Using the Modified {G}abor-Wavelet Transform},
- journal  = {IEEE/ACM Transactions on Computational Biology and Bioinformatics},
- volume   = {5},
- pages    = {198-207},
- year     = {2008},
-}
-
-@Article{floats2014,
- author    = {Frank Mittelbach},
- title     = {How to influence the position of float environments like figure and table in {\LaTeX}?},
- journal   = {{TUGboat}},
- journalsubtitle = {Communications of the \TeX\ Users Group},
- volume    = {35},
- number    = {3},
- year      = 2014,
- url       = {tug.org/TUGboat/tb35-3/tb111mitt-float.pdf},
- urldate   = {2020-01-09},
- publisher = {\TeX\ {Users} {Group}},
- address   = {Portland ({OR}), {USA}},
-}
-
-@Techreport{alvisi99:analysisCIC,
- author      = {Lorenzo Alvisi and Elmootazbellah Elnozahy and Sriram S. Rao and Syed A. Husain and Asanka Del Mel},
- title       = {An Analysis of Comunication-Induced Checkpointing},
- institution = {Department of Computer Science, University of Texas at Austin},
- year        = {1999},
- number      = {TR-99-01},
- address     = {Austin, USA}
-}
-
-@Misc{gridftp,
- author   = {William Allcock},
- title    = {{GridFTP} Protocol Specification. {Global Grid Forum} Recommendation ({GFD}.20)},
- year     = {2003}
-}
-
-% A entrada "year" eh usada por bibtex;
-% biblatex pode usar "year" ou "date"
-@Manual{natbib,
- title       = "Reference sheet for \texttt{natbib} usage",
- author      = "Patrick W. Daly",
- year        = {2010},
- date        = {2010-09-13},
- urldate     = {2018-12-20},
- url         = {mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf},
-}
-
-@Manual{biblatex,
- title       = "The \texttt{biblatex} Package",
- author      = "Philipp Lehman and Philip Kime and Moritz Wemheuer and Audrey Boruvka and Joseph Wright",
- year        = 2018,
- date        = {2018-10-30},
- urldate     = {2018-12-20},
- url         = {mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf},
-}
-
-@PhdThesis{garcia01:PhD,
- author   = {Islene C. Garcia},
- title    = {Visões Progressivas de Computações Distribuídas},
- school   = {Instituto de Computação, Universidade de Campinas},
- address  = {Campinas, Brasil},
- year     = {2001},
- month    = dec
-}
-
-@Conference{bronevetsky02,
- author     = {Greg Bronevetsky and Daniel Marques and Keshav Pingali and Paul Stodghill},
- title      = {Automated Application-Level Checkpointing of {MPI} Programs},
- booktitle  = {PPoPP'03: Proceedings of the 9th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
- year       = {2003},
- pages      = {84-89},
- eventdate  = {2003-06-11/2003-06-13},
- venue      = {San Diego, California}
-}
-
-@InCollection{bobaoglu93:concepts,
- author   = {Ozalp Babaoglu and Keith Marzullo},
- title    = {Consistent Global States of Distributed Systems: Fundamental Concepts and Mechanisms},
- editor   = {Sape Mullender},
- booktitle= {Distributed Systems},
- edition  = 2,
- year     = {1993},
- pages    = {55-96}
-}
-
-@MastersThesis{schmidt03:MSc,
- author   = {Rodrigo M. Schmidt},
- title    = {Coleta de Lixo para Protocolos de \emph{Checkpointing}},
- school   = {Instituto de Computação, Universidade de Campinas},
- address  = {Campinas, Brasil},
- year     = {2003},
- month    = oct
-}
-
-@online{fowler04:designDead,
- author   = {Martin Fowler},
- title    = {Is Design Dead?},
- year     = {2004},
- month    = may,
- urldate  = {2010-01-30},
- url      = {martinfowler.com/articles/designDead.html},
-}
-
-@online{FSF:GNU-GPL,
- author      = {{Free Software Foundation}},
- shortauthor = {FSF},
- title       = {{GNU} General Public License},
- year        = 2007,
- urldate     = {2010-01-30},
- url         = {www.gnu.org/copyleft/gpl.html},
-}
-
-@article{alon09:how,
- author   = {Uri Alon},
- title    = {How To Choose a Good Scientific Problem},
- journal  = {Molecular Cell},
- year     = {2009},
- volume   = {35},
- number   = {6},
- pages    = {726--728},
- publisher= {Cell Press},
- month    = sep,
- doi      = {10.1016/j.molcel.2009.09.013},
-}
-
-@book{tufte01:visualDisplay,
- author   = {Edward Tufte},
- title    = {The Visual Display of Quantitative Information},
- year     = {2001},
- edition  = 2,
- publisher= {Graphics Press},
- month    = may,
-}
-
-@Manual{usp:guidelines,
- author      = {{Universidade de São Paulo --- Sistema Integrado de Bibliotecas}},
- shortauthor = {SIBiUSP},
- title       = {Diretrizes para Apresentação de
-	        Dissertações e Teses da {USP}:
-	        Documento Eletrônico e Impresso},
- year        = 2009,
- url         = {www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67},
- urldate     = {2017-11-10},
-}
-
-@online{carlis:09,
- author  = {John V. Carlis},
- title   = {Design: The Key to Writing
-            (and Advising) a One-Draft {Ph.D} Dissertation},
- year    = 2009,
- url     = {www-users.cs.umn.edu/~carlis/one-draft.pdf},
- urldate = {2017-11-10},
-}
-
-@book{craftresearch,
- author    = {Wayne C. Booth and Gregory G. Colomb and Joseph M. Williams},
- title     = {The Craft of Research},
- publisher = {The University of Chicago Press},
- year      = 2008,
-}
-
-@book{dissertjourney,
- author    = {Carol M. Roberts},
- title     = {The Dissertation Journey},
- publisher = {Corwin},
- year      = 2010,
- edition   = 2,
- location  = {Thousand Oaks, CA},
-}
-
-@manual{sbctemplate,
- author  = {Luciana P. Nedel and Rafael H. Bordini and Flávio Rech Wagner and Jomi F. H\"{u}bner},
- title   = {Instructions for Authors of {SBC} Conferences Papers and Abstracts},
- year    = 2017,
- url     = {www.sbc.org.br/documentos-da-sbc/category/169-templates-para-artigos-e-capitulos-de-livros},
- urldate = {2018-12-13},
+@inproceedings{Pattern3,
+  author = {Paris, Andr\'{e} and Guerra, Eduardo and Silveira, Fabio and Silva, Kelson},
+  title = {Patterns for Small Adjustments in the Development Process to Deal with Architectural Uncertainties},
+  year = {2024},
+  isbn = {9798400716836},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3698322.3698335},
+  doi = {10.1145/3698322.3698335},
+  abstract = {Uncertainty, coming both from requirements and solution candidates, is present when we work with architectural decisions. A technique called ArchHypo proposes an approach based on hypothesis engineering to manage this uncertainty related to the software architecture. As a part of it, for each hypothesis identified, a technical plan is elaborated with actions that aim to reduce the uncertainty or its impact. This paper focuses on patterns that can be used as part of this technical plan in cases where uncertainty is recurrent in several features or parts of the system. For example, there might be uncertainty about usability or performance that can affect several features. The patterns documented in this paper propose small adjustments in the development process, like adding constraints to existing tasks or introducing steps before or after certain activities, to deal with these uncertainties.},
+  booktitle = {Proceedings of the 29th European Conference on Pattern Languages of Programs, People, and Practices},
+  articleno = {25},
+  numpages = {8},
+  keywords = {Hypotheses engineering, Software architecture, Handling uncertainty, Guideline, Programming, Development Process},
+  series = {EuroPLoP '24}
 }

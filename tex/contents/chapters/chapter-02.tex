@@ -14,15 +14,14 @@ support these practices.
 
 \section{The Role of Software Architecture in Agile and High-Flow Environments}
 
-Software Architecture (SA) is a fundamental concept in software development,
-forming the structural foundation of systems and ensuring their long-term
-sustainability. While early definitions, such as those by Perry and Wolf in
-1992, characterized SA as a composition of elements, form, and rationale,
-modern definitions have evolved to incorporate deeper insights into the
-dynamics of system evolution. Contemporary definitions, such as those by
-Richards and Ford, characterize SA as a high-level system structure
-encompassing essential characteristics, design principles, and the decisions to
-guide system adaptability and maintainability.
+Software Architecture is a fundamental concept in software development, forming
+the structural foundation of systems and ensuring their long-term
+sustainability. While early definitions characterized SA as a composition of
+elements, form, and rationale, modern definitions have evolved to incorporate
+deeper insights into the dynamics of system evolution. Contemporary definitions
+characterize SA as a high-level system structure encompassing essential
+characteristics, design principles, and the decisions to guide system
+adaptability and maintainability.
 
 This expanded perspective highlights that SA is not merely a static blueprint
 but a dynamic framework that guides decisions throughout the system life cycle
@@ -35,15 +34,15 @@ timing and certainty of decisions.
 Agile methodologies have successfully introduced practices like Test-Driven
 Development (TDD) and refactoring, yet they often lack well-recognized and
 agreed-upon approaches for architectural design. In many agile contexts, the
-most recognized approach is to simply let the architecture "emerge" and refine
-it over the life of the project. While this approach aims to reduce upfront
+most recognized approach is to simply let the architecture emerge and refine it
+over the life of the project. While this approach aims to reduce upfront
 design, it often leads to a lack of established practice, meaning architectural
 changes remain challenging within agile contexts, often necessitating
 significant upfront design that contradicts core agile principles.
 
 In rapidly evolving business environments, such as software startups, new
 requirements continually reshape architectural demands. In these dynamic
-scenarios, architecture anti-patterns—such as the "Big Ball of Mud"—may emerge,
+scenarios, architecture anti-patterns—such as the Big Ball of Mud—may emerge,
 posing risks to effective architectural evolution and resulting in systems that
 struggle to maintain proper modularity and scalability. This anti-pattern often
 emerges when immediate demands and incremental fixes override deliberate
@@ -67,7 +66,7 @@ for solutions undergoing continuous evolution.
 
 \subsection{The Necessity of Fast Flow}
 
-Recent industry trends emphasize the concept of "fast flow," which refers to an
+Recent industry trends emphasize the concept of fast flow, which refers to an
 organization's ability to continuously and rapidly deliver software changes
 that align with evolving business needs while preserving the system health and
 architectural integrity. Achieving fast flow relies on autonomous, empowered
@@ -83,9 +82,9 @@ members, regardless of their experience levels.
 \section{The Paradox of Software Architecture Decision-Making}
 
 Despite the industry's aspiration for decentralized, autonomous teams capable
-of maintaining a "fast flow" of requirements, a significant theoretical and
-practical barrier exists. This research identifies this barrier as the
-\textbf{Paradox of Software Architecture Decision-Making}.
+of maintaining a fast flow of requirements, a significant theoretical and
+practical barrier exists. We identifies this barrier as the \textbf{Paradox of
+	Software Architecture Decision-Making}.
 
 \subsection{The Central Paradox}
 
@@ -104,13 +103,12 @@ limit the involvement of less experienced team members.
 
 \subsection{Reliance on Tacit Knowledge}
 
-A systematic mapping study by Souza et al. (2019) examined methods and
-practices for deriving architectural models from requirements specifications. A
-key finding was that existing methods strongly relied on experienced
-practitioners' tacit knowledge to derive the architectural definitions for a
-software system. This reliance on the intuition and expertise of architects
-makes it difficult for teams without such expertise to adopt these methods
-effectively.
+A systematic mapping study by \cite{SysMap} examined methods and practices for
+deriving architectural models from requirements specifications. A key finding
+was that existing methods strongly relied on experienced practitioners' tacit
+knowledge to derive the architectural definitions for a software system. This
+reliance on the intuition and expertise of architects makes it difficult for
+teams without such expertise to adopt these methods effectively.
 
 This dependency creates bottlenecks that limit an effective decentralization of
 decision-making. As a result, the shift towards a more distributed
@@ -147,7 +145,7 @@ continuously validating product assumptions, transforming them into hypotheses,
 prioritizing and testing them following the scientific method to support or
 refute them.
 
-In this context, the word "hypothesis" focuses on business assumptions that
+In this context, the word hypothesis focuses on business assumptions that
 should be evaluated before start-ups develop their business models. However,
 this concept is extended here to manage the uncertainty of architectural
 decisions.
@@ -174,7 +172,7 @@ software architecture design. Its primary characteristic is that it must be
 \textbf{falsifiable}—that is, the possibility of proving it false exists.
 
 Unlike a requirement statement, which is usually assumed as true when written,
-using the word "hypothesis" makes it clear to the whole team that it represents
+using the word hypothesis makes it clear to the whole team that it represents
 uncertainty. Hypotheses must be shared with the development team so that
 everyone is aware of the uncertainties that can affect architectural decisions.
 This explicit documentation allows the team to systematically test and validate
@@ -225,7 +223,7 @@ The plan can include actions aiming to:
 \begin{itemize}
 	\item Definitely accept or refute the hypothesis.
 	\item \textbf{Reduce the uncertainty:} Giving the team more confidence to move forward with a decision.
-	\item \textbf{Reduce the impact:} Allowing the team to "stay longer with the uncertainty" by isolating the affected areas or increasing flexibility.
+	\item \textbf{Reduce the impact:} Allowing the team to stay longer with the uncertainty by isolating the affected areas or increasing flexibility.
 	\item Define criteria (triggers) to postpone handling the hypothesis until a specific
 	      condition is met.
 \end{itemize}
@@ -240,7 +238,7 @@ uncertainties. Key patterns include:
 	\item \textbf{Tracer Bullet:} An architecturally significant functionality that helps to exercise and demonstrate an end-to-end path inside the architecture, aiming to evaluate how new technologies could be integrated. This pattern provides a concrete way to design the basic application architecture.
 	\item \textbf{Software Analytics:} Identifying relevant metrics to collect and analyze to assess and monitor a given quality attribute of the system.
 	\item \textbf{Architectural Trigger:} Defines conditions that trigger architectural investigations which may lead to adding tasks to the backlog. For example, having a given number of simultaneous accesses might fire a trigger related to scalability.
-	\item \textbf{Development Guidelines:} Small adjustments in the development process to deal with recurrent uncertainties. These include:
+	\item \textbf{Development Guidelines:} Small adjustments in the development process to deal with recurrent uncertainties.
 	\item \textbf{Protective Guideline:} Defining programming practices to be followed or avoided to not limit options for an architectural decision being postponed.
 	\item \textbf{Bring the Specialist:} Involving individuals with the right skills or knowledge in activities where this expertise can reduce the uncertainty.
 	\item \textbf{Plan for Preparation:} Introducing steps to obtain information before activities that recurrently have an associated uncertainty.
@@ -255,15 +253,15 @@ hinder widespread adoption.
 
 \subsection{Adoption Barriers}
 
-An empirical study on ArchHypo reported that while the technique provided a
-structured approach to dividing architectural work, the team identified the
-learning curve and process adjustments required for adoption as significant
-challenges. Specifically, participants found the technique hard to learn,
-particularly in mapping risks, specifying hypotheses, and defining action
-plans.
+The empirical study in \cite{ArchHypo} found that, although the technique
+offered a structured approach to dividing architectural work, the team
+identified significant challenges in its adoption due to the learning curve and
+required process adjustments. In particular, participants reported difficulty
+in learning the method, especially with respect to mapping risks, specifying
+hypotheses, and defining action plans.
 
-Team members mentioned difficulty in "mapping the scenarios with risk" to the
-hypothesis and "definition of the actions" to handle the hypothesis. One
+Team members mentioned difficulty in mapping the scenarios with risk to the
+hypothesis and definition of the actions to handle the hypothesis. One
 participant explicitly noted that "train[ing] the team a little more on how to
 find, map risk scenarios, and define the necessary actions... would make the
 team less dependent on the team of architects".
@@ -283,16 +281,16 @@ experts remains a bottleneck.
 
 \subsection{Integration with Developer Platforms}
 
-To bridge this gap, researchers have suggested that plugins of existing tools
-could introduce support for hypotheses management. By integrating with project
-management platforms or developer portals, a tool can facilitate seamless
-adoption into diverse development workflows.
+To bridge this gap, plugins of existing tools could introduce support for
+hypotheses management. By integrating with project management platforms or
+developer portals, a tool can facilitate seamless adoption into diverse
+development workflows.
 
 The development of \textbf{HypoStage}, a dedicated software tool, aims to
 operationalize the ArchHypo framework. It intends to allow teams to explicitly
 document and manage architectural hypotheses, assess them based on impact and
 uncertainty, and define and track technical action plans. This technological
-intervention addresses the core of the "Paradox of Software Architecture
-Decision-Making" by providing the structural scaffolding necessary for less
+intervention addresses the core of the Paradox of Software Architecture
+Decision-Making by providing the structural scaffolding necessary for less
 experienced practitioners to engage in decentralized, high-quality
 architectural decision-making.

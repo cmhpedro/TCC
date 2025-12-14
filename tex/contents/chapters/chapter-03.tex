@@ -7,57 +7,57 @@ the empirical gaps identified in the literature regarding the ArchHypo
 framework, this chapter details the development of a software tool designed to
 operationalize decentralized architectural decision-making. The chapter begins
 by justifying the necessity of a technological intervention to resolve the
-"Paradox of Software Architecture Decision-Making." It then proceeds to
-describe the solution's integration within the Backstage internal developer
-portal, details the functional requirements for managing the hypothesis
-lifecycle, and concludes with a technical examination of the software
-architecture and the open-source strategy adopted for the project.
+Paradox of Software Architecture Decision-Making. It then proceeds to describe
+the solution's integration within the Backstage internal developer portal,
+details the functional requirements for managing the hypothesis lifecycle, and
+concludes with a technical examination of the software architecture and the
+open-source strategy adopted for the project.
 
 \section{Justification for Tooling Support}
 
 The theoretical framework of ArchHypo, as discussed in Chapter 2, provides a
 robust methodology for managing architectural uncertainty through Hypothesis
 Engineering. However, the transition from theory to practice presents
-significant hurdles. Empirical research conducted by Silva et al. on the
+significant hurdles. Empirical research conducted by \cite{ArchHypo}. on the
 application of ArchHypo has demonstrated clear benefits, such as improved
 collaboration and a structured approach to architectural work, yet it
-simultaneously revealed "significant adoption challenges".
+simultaneously revealed significant adoption challenges.
 
 \subsection{The Dilemma of Manual Application}
 
 The primary barrier to the widespread adoption of Hypothesis Engineering in
 software architecture lies in the cognitive load and process overhead imposed
 on development teams. Participants in empirical studies found the technique
-"hard to learn, particularly in mapping risks, specifying hypotheses, and
-defining action plans". Specifically, the abstract nature of translating vague
+hard to learn, particularly in mapping risks, specifying hypotheses, and
+defining action plans. Specifically, the abstract nature of translating vague
 architectural uncertainties into testable hypotheses proved to be a cognitive
-bottleneck. The study highlighted that teams struggled with "mapping the
-scenarios with risk" and properly articulating the necessary technical
+bottleneck. The study highlighted that teams struggled with mapping the
+scenarios with risk and properly articulating the necessary technical
 interventions.
 
 Furthermore, without structured guidance, the execution of the framework often
 defaulted back to the most experienced members of the team, reinforcing the
 very centralization the method aims to dismantle. The feedback from
 practitioners was explicit regarding the solution to this problem: there is a
-strong need for "tool support to manage hypotheses and execute action plans,
-which could lessen team dependency on architects". Without effective tools to
+strong need for tool support to manage hypotheses and execute action plans,
+which could lessen team dependency on architects. Without effective tools to
 aid architects—suggesting patterns and supporting decision-making—the
 dependency on seasoned experts remains a bottleneck, perpetuating the
 centralization of architectural authority.
 
 \subsection{Technological Intervention as a Scaffolding Mechanism}
 
-This capstone project posits that the "Paradox of Software Architecture
-Decision-Making"—where the desire for decentralized autonomy conflicts with the
-reliance on centralized tacit knowledge—cannot be resolved through process
+This capstone project posits that the Paradox of Software Architecture
+Decision-Making — where the desire for decentralized autonomy conflicts with
+the reliance on centralized tacit knowledge—cannot be resolved through process
 changes alone. It requires a technological intervention. The development of a
-dedicated software tool aims to "operationalize the ArchHypo framework".
+dedicated software tool aims to operationalize the ArchHypo framework.
 
 By embedding the methodological rules, assessment scales, and technical
 patterns directly into a software interface, the tool provides the necessary
 structural scaffolding for less experienced practitioners. It intends to allow
-teams to "explicitly document and manage architectural hypotheses, assess them
-based on impact and uncertainty, and define and track technical action plans".
+teams to explicitly document and manage architectural hypotheses, assess them
+based on impact and uncertainty, and define and track technical action plans.
 Consequently, the tool acts as a mechanism for knowledge distribution, enabling
 the decentralization of high-quality architectural decision-making.
 
@@ -69,16 +69,16 @@ into the daily workflow of engineering teams.
 
 \subsection{The HypoStage Solution}
 
-HypoStage is defined as an "ArchHypo plugin for Backstage". It is not merely a
-documentation repository but an active management tool that "integrates
+HypoStage is defined as an ArchHypo plugin for Backstage. It is not merely a
+documentation repository but an active management tool that integrates
 architectural hypothesis management into your Backstage environment, enabling
-teams to document, track, and validate architectural decisions effectively".
-The tool is designed to guide users through the lifecycle of a hypothesis, from
+teams to document, track, and validate architectural decisions effectively. The
+tool is designed to guide users through the lifecycle of a hypothesis, from
 elicitation to validation or refutation, ensuring that uncertainty is treated
 as a first-class citizen in the software delivery process.
 
-A key design principle of HypoStage is its capability to "seamlessly integrates
-with Backstage's catalog and entity system". This ensures that architectural
+A key design principle of HypoStage is its capability to seamlessly integrates
+with Backstage's catalog and entity system. This ensures that architectural
 hypotheses are not abstract entities but are directly linked to the software
 components, APIs, and resources they affect, promoting traceability and
 context-aware decision-making.
@@ -86,11 +86,11 @@ context-aware decision-making.
 \subsection{Rationale for the Backstage Ecosystem}
 
 The decision to implement HypoStage as a plugin for \textbf{Backstage}—an
-open-source Internal Developer Portal (IDP)—is strategic. To bridge the gap
-identified in the literature, researchers have suggested that "plugins of
-existing tools could introduce support for hypotheses management". By
-integrating with project management platforms or developer portals, a tool can
-"facilitate seamless adoption into diverse development workflows".
+open-source IDP—is strategic. To bridge the gap identified in the literature,
+researchers have suggested that plugins of existing tools could introduce
+support for hypotheses management. By integrating with project management
+platforms or developer portals, a tool can facilitate seamless adoption into
+diverse development workflows.
 
 Backstage was selected as the host platform because it serves as a centralized
 hub for software development teams, aggregating infrastructure, services, and
@@ -98,8 +98,8 @@ documentation. By placing hypothesis management within the IDP, HypoStage
 ensures that architectural decision-making occurs in the same environment where
 development happens. This visibility is crucial for decentralization, as it
 democratizes access to architectural rationale. Furthermore, the modular
-architecture of HypoStage allows it to be "integrated with existing developer
-portals... facilitating seamless adoption", leveraging Backstage's extensible
+architecture of HypoStage allows it to be integrated with existing developer
+portals, facilitating seamless adoption, leveraging Backstage's extensible
 plugin architecture to reach a wide audience of practitioners.
 
 \section{Functional Requirements and Implementation}
@@ -110,63 +110,63 @@ functionalities cover documentation, assessment, planning, and visualization.
 
 \subsection{Explicit Hypothesis Management and Tracking}
 
-The core functionality of HypoStage is "Hypothesis Management," which allows
-users to "create, edit, and track architectural hypotheses with detailed
-metadata". The system enforces a structured format for elicitation, requiring
+The core functionality of HypoStage is Hypothesis Management, which allows
+users to create, edit, and track architectural hypotheses with detailed
+metadata. The system enforces a structured format for elicitation, requiring
 clear statements that define the uncertainty. The implementation provides a
 robust form interface that captures essential data points such as the
-"Hypothesis Statement," "Source Type" (e.g., Requirements, Solution), and
-associated "Entity References" from the catalog.
+Hypothesis Statement, Source Type (e.g., Requirements, Solution), and
+associated Entity References from the catalog.
 
-Furthermore, the tool supports "Status Tracking," allowing teams to "monitor
-hypothesis lifecycle from creation to validation". The system supports multiple
-statuses for hypotheses, such as "Open", "In Review", "Validated", "Discarded",
-and "Trigger-Fired". This explicit tracking ensures that architectural
-uncertainties are not forgotten but are actively managed until resolution.
+Furthermore, the tool supports Status Tracking, allowing teams to monitor
+hypothesis lifecycle from creation to validation. The system supports multiple
+statuses for hypotheses, such as Open, In Review, Validated, Discarded, and
+Trigger-Fired. This explicit tracking ensures that architectural uncertainties
+are not forgotten but are actively managed until resolution.
 
 \subsection{Uncertainty and Impact Assessment}
 
 A critical component of the ArchHypo framework is the quantitative and
-qualitative assessment of hypotheses. HypoStage implements "Uncertainty
-Assessment" functionality to "evaluate hypothesis uncertainty using Likert
-scale ratings".
+qualitative assessment of hypotheses. HypoStage implements Uncertainty
+Assessment functionality to evaluate hypothesis uncertainty using Likert scale
+ratings.
 
-The interface requires users to provide an "Uncertainty Rating" and an "Impact
-Rating," both utilizing a "1-5 scale". These ratings map to values ranging from
-"Very Low" (1) to "Very High" (5). This structured assessment forces teams to
+The interface requires users to provide an Uncertainty Rating and an Impact
+Rating, both utilizing a 1-5 scale. These ratings map to values ranging from
+Very Low (1) to Very High (5). This structured assessment forces teams to
 critically evaluate how far they are from validating a hypothesis and what the
 potential consequences of failure are, directly addressing the difficulty
-participants faced in "mapping risks" in manual implementations.
+participants faced in mapping risks in manual implementations.
 
 \subsection{Technical Planning and Quality Correlation}
 
-To move from assessment to action, HypoStage provides "Technical Planning"
-capabilities. The tool allows teams to "create and manage technical planning
-items linked to hypotheses". Users can define specific actions—such as
-"Architectural Spike," "Tracer Bullet," or "Prototype"—assigned to specific
+To move from assessment to action, HypoStage provides Technical Planning
+capabilities. The tool allows teams to create and manage technical planning
+items linked to hypotheses. Users can define specific actions—such as
+Architectural Spike, Tracer Bullet, or Prototype — assigned to specific
 entities with target dates and expected outcomes. This directly supports the
-objective to "define and track technical action plans associated with each
-hypothesis".
+objective to define and track technical action plans associated with each
+hypothesis.
 
-Additionally, the tool implements "Quality Attributes Tracking," enabling users
-to "associate hypotheses with specific quality attributes". The system supports
-a comprehensive list of attributes, such as Performance, Security, Scalability,
+Additionally, the tool implements Quality Attributes Tracking, enabling users
+to associate hypotheses with specific quality attributes. The system supports a
+comprehensive list of attributes, such as Performance, Security, Scalability,
 and Maintainability. This feature ensures that architectural decisions are
 explicitly linked to the non-functional requirements they impact, fostering a
 quality-driven architectural culture.
 
 \subsection{Visualization and Evidentiary Support}
 
-To support decision-making over time, HypoStage includes "Visualization"
-features to "track hypothesis evolution and validation status through
-interactive charts". The system renders a temporal view of how uncertainty and
-impact ratings change as technical plans are executed, providing empirical
-evidence of risk reduction.
+To support decision-making over time, HypoStage includes Visualization features
+to track hypothesis evolution and validation status through interactive charts.
+The system renders a temporal view of how uncertainty and impact ratings change
+as technical plans are executed, providing empirical evidence of risk
+reduction.
 
 Finally, to ground decisions in facts rather than intuition, the tool supports
-the inclusion of "Evidence URLs". The system allows teams to "add supporting
-documentation links", such as external test results, POC repositories, or
-vendor documentation, thereby ensuring that the validation of a hypothesis is
+the inclusion of Evidence URLs. The system allows teams to add supporting
+documentation links, such as external test results, POC repositories, or vendor
+documentation, thereby ensuring that the validation of a hypothesis is
 auditable and transparent.
 
 \section{Software Engineering Architecture}
@@ -178,8 +178,8 @@ and the backend plugin.
 
 \subsection{Component Architecture}
 
-The system architecture is composed of distinct "frontend components" and
-"backend services".
+The system architecture is composed of distinct frontend components and backend
+services.
 
 \subsubsection{Frontend Architecture}
 
@@ -190,21 +190,21 @@ The frontend is built using React and integrates with the Backstage core API.
 The backend logic is encapsulated in the backend package.
 
 \begin{itemize}
-	\item HypothesisService: The "Core service for hypothesis management". As seen in
-	      this service manages business logic and data persistence. It utilizes database
+	\item HypothesisService: The core service for hypothesis management. As seen in this
+	      service manages business logic and data persistence. It utilizes database
 	      transactions to ensure data integrity when creating hypotheses and logging
 	      associated lifecycle events simultaneously.
 	\item Router: The router module uses express-promise-router to define RESTful
 	      endpoints, handling request validation via Zod schemas before invoking the
 	      service layer.
 	\item Persistence: The system uses Knex.js for database interactions, including
-	      "Database migrations for schema setup" which define the structure for
-	      hypothesis, technicalPlanning, and hypothesisEvents tables.
+	      database migrations for schema setup which define the structure for hypothesis,
+	      technicalPlanning, and hypothesisEvents tables.
 \end{itemize}
 
 \subsection{Design for Integration and Modularity}
 
-The project adheres to the goal of ensuring "modularity and integrability". The
+The project adheres to the goal of ensuring modularity and integrability. The
 plugin is registered within the Backstage backend system using the
 createBackendPlugin factory, allowing it to inject dependencies such as logger,
 database, httpAuth, and catalogService.
@@ -213,9 +213,9 @@ This dependency injection model is crucial for the tool's operation as a
 socio-technical enabler. For instance, the HypothesisService interacts with the
 CatalogService to fetch entity references, ensuring that hypotheses are tightly
 coupled to the actual software components registered in the organization's
-ecosystem. This design allows HypoStage to be "used as a standalone
-application" (in a dev environment) or "integrated with existing developer
-portals", fulfilling the requirement for seamless adoption.
+ecosystem. This design allows HypoStage to be used as a standalone application
+(in a dev environment) or integrated with existing developer portals,
+fulfilling the requirement for seamless adoption.
 
 \section{Open Source Commitment and Documentation}
 
@@ -236,10 +236,9 @@ Backstage instances.
 
 To mitigate the learning curve not just of the method, but of the tool itself,
 comprehensive documentation has been developed. The README.md serves as the
-primary entry point, detailing "Installation," "Configuration," and "Usage"
-guides. It explains how to configure the frontend routes and backend plugins,
-ensuring that organizations can adopt the tool with minimal friction. By
-providing clear "API Reference" and "Features" descriptions, the project aims
-to lower the barrier to entry, facilitating the shift from centralized, tacit
-architectural management to a transparent, decentralized, and hypothesis-driven
-approach.
+primary entry point, detailing Installation, Configuration, and Usage guides.
+It explains how to configure the frontend routes and backend plugins, ensuring
+that organizations can adopt the tool with minimal friction. By providing clear
+API Reference and Features descriptions, the project aims to lower the barrier
+to entry, facilitating the shift from centralized, tacit architectural
+management to a transparent, decentralized, and hypothesis-driven approach.

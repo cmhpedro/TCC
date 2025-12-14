@@ -2,178 +2,82 @@
 
 \section{Software Architecture and the Challenge of Rapid Evolution}
 
-In the contemporary landscape of software engineering, the definition and
-evolution of Software Architecture (SA) have transcended the traditional view
-of static blueprints to become a dynamic and continuous process essential for
-business survival. As software systems grow in complexity and scale, the
-architectural foundation upon which they are built dictates not only their
-current operational capacity but, more crucially, their future viability.
-Consequently, "Software architecture (SA) is a fundamental concept in software
-development, forming the structural foundation of systems and ensuring their
-long-term sustainability." This sustainability is not merely a technical
-concern; it is a strategic asset that determines an organization's agility in
-response to market fluctuations.
+In the modern landscape of software engineering, Software Architecture (SA) has
+evolved from a static blueprint into a continuous, dynamic process that is
+critical for business survival. As systems grow in complexity, SA serves as the
+structural foundation that ensures long-term sustainability, acting as a
+strategic asset that dictates an organization's agility in fluctuating markets.
 
-Historically, the academic understanding of architecture has been grounded in
-the tripartite definition proposed by Perry and Wolf, establishing SA as a
-composition of "three critical components: elements, form, and rationale." The
-\textit{elements} represent the processing, data, and connecting components;
-the \textit{form} dictates the weighted properties and relationships among
-them; and the \textit{rationale} provides the justification for these
-structural choices. However, in the modern era of software
-development—characterized by the proliferation of startups and the adoption of
-Agile methodologies—the \textit{rationale} component faces unprecedented
-pressure. The reasoning behind architectural decisions is often obfuscated by
-the urgency of delivery, leading to systems where the "form" degrades into what
-is colloquially known as a "Big Ball of Mud."
+Traditionally, architecture was defined by \cite{Perry1992} tripartite model
+comprising elements (processing, data, and connections), form (relationships
+and weights), and rationale (justification). However, the modern pressure to
+deliver quickly often obfuscates the rationale, causing the form to degrade
+into what is known as a "Big Ball of Mud".
 
-The core tension in modern software engineering lies in the temporal dimension
-of design. In static environments, architecture could be heavily front-loaded;
-however, "maintaining architectural integrity while enabling rapid feature
-delivery is crucial in fast-paced environments such as software startups, where
-requirements emerge frequently." This volatility in requirements necessitates a
-paradigm shift from architecture as a fixed deliverable to architecture as a
-continuous flow of decisions. The ability to pivot, scale, or refactor without
-catastrophic system failure is the hallmark of a robust architecture.
-
-Therefore, the overarching challenge for practitioners and researchers alike
-resides in the delicate equilibrium between velocity and stability. The modern
-challenge resides in balancing "speed with quality to ensure sustainable,
-adaptable architectures that meet evolving business demands." Failure to
-maintain this balance results in technical debt accumulation that eventually
-paralyzes the development process, rendering the system incapable of evolving
-alongside the business it supports.
+The core tension today lies in balancing velocity with stability. While
+architecture was once front-loaded, maintaining integrity while enabling rapid
+feature delivery is now crucial, particularly in fast-paced environments like
+startups where requirements emerge frequently. Practitioners must balance speed
+with quality to ensure adaptable architectures; failing to do so results in
+technical debt that paralyzes future development.
 
 \section{The Central Paradox: Decentralization vs. Tacit Knowledge}
 
-Despite the widespread recognition of the need for architectural flexibility, a
-profound dissonance exists between the organizational aspirations of the
-software industry and the methodological realities of architectural design. The
-industry, driven by the philosophy of DevOps and Team Topologies, increasingly
-advocates for the democratization of decision-making. The goal is to empower
-autonomous, cross-functional teams to own their architectural choices to
-eliminate bottlenecks and accelerate the flow of value. However, this
-aspiration creates a significant friction point when contrasted with the
-prevailing methods for architectural derivation.
+A profound dissonance exists between the industry's organizational aspirations
+and the reality of architectural design methods. Modern trends, such as DevOps
+and Team Topologies, advocate for democratizing decision-making to empower
+autonomous teams and accelerate value flow.
 
-This study identifies and addresses the "Paradox of Software Architecture
-Decision-Making," a phenomenon that "highlights the conflicting dynamics
-between industry reports advocating for decentralized, team-driven
-architectural decision-making and academic evidence showing that methods for
-deriving software architecture still heavily rely on the tacit knowledge of
-experienced practitioners."
+However, this creates a "Paradox of Software Architecture Decision-Making".
+While the industry pushes for decentralized, team-driven decisions, academic
+evidence shows that existing methods for deriving architecture heavily rely on
+the tacit knowledge of experienced practitioners. This reliance assumes the
+presence of seasoned architects who can intuitively synthesize requirements—a
+resource that is often scarce or expensive.
 
-This paradox is not merely anecdotal but is supported by rigorous secondary
-studies. A systematic mapping of the literature has revealed that existing
-methodologies for bridging the gap between requirements and architecture are
-fundamentally flawed in their reliance on seniority. The mapping revealed that
-existing methods "strongly relied on experienced practitioners' tacit knowledge
-to derive the architectural definitions for a software system." This reliance
-assumes the presence of a seasoned architect capable of intuitively
-synthesizing complex requirements into coherent structures—a resource that is
-scarce, expensive, and often unavailable in leaner startup environments.
-
-The implications of this dependency are severe for organizations attempting to
-scale. When architectural methods are opaque and rooted in the intuition of a
-few experts rather than explicit, teachable processes, it "creates bottlenecks
-and limits the practical applicability of these methods in teams without senior
-members." It effectively concentrates power and responsibility in a centralized
-manner, directly contradicting the agile ethos of distributed ownership.
-
-Consequently, a vicious cycle emerges. Organizations strive for
-decentralization to handle the fast flow of requirements, yet the tools and
-methods available to them force a reversion to centralized command-and-control
-structures to ensure architectural coherence. The result is a self-reinforcing
-cycle where the change to decentralization is "obstructed by frameworks that
-inherently require centralization, blocking the practical adoption of a
-socio-technical architecture approach." Breaking this cycle requires a new
-methodological approach that externalizes tacit knowledge and makes the
-management of architectural uncertainty accessible to the broader engineering
-team.
+This dependency creates bottlenecks and limits the applicability of these
+methods in teams lacking senior members, effectively concentrating power and
+contradicting the ethos of distributed ownership. Consequently, a
+self-reinforcing cycle emerges: organizations attempt to decentralize to handle
+fast-flowing requirements, but are obstructed by frameworks that inherently
+require centralization, blocking the adoption of a true socio-technical
+approach.
 
 \section{The Philosophical Solution: ArchHypo}
 
-To resolve the paradox of centralized knowledge in a decentralized world, this
-work adopts and expands upon the principles of \textbf{ArchHypo}. This
-technique represents a philosophical shift from viewing architecture as a set
-of facts to viewing architecture as a set of experiments. By acknowledging that
-early-stage architectural decisions are often based on assumptions rather than
-certainties, ArchHypo "uses hypotheses engineering to manage uncertainties
-related to software architecture."
+To resolve this paradox, this work builds upon the principles of ArchHypo, a
+technique that shifts the view of architecture from a set of facts to a set of
+experiments. ArchHypo employs hypotheses engineering to manage the
+uncertainties inherent in software architecture.
 
-The core philosophy of ArchHypo aligns seamlessly with the scientific method.
-Rather than making premature commitments to specific technologies or patterns
-based on incomplete information—a practice that leads to rigid and brittle
-systems—ArchHypo advocates for the explicit documentation of uncertainties. The
-objective is to allow the "strategic postponement of decisions while addressing
-their potential impact." This is not procrastination; it is a deliberate risk
-management strategy. By treating an architectural choice as a hypothesis (e.g.,
-"The application should handle 1000 simultaneous requests"), the team can
-define metrics and experiments to validate that choice before fully committing
-to it.
-
-This approach provides a structured mechanism for the implementation of the
-"Continuous Architecture" principle to "delay design decisions." In traditional
-agile environments, delaying a decision is often conflated with ignoring it.
-ArchHypo, conversely, ensures that the delayed decision is actively managed. It
-provides a framework that supports the team in "evaluating the respective
-trade-offs in identifying the most responsible moment for that decision." The
-"Responsible Moment" is the point in time where the cost of deciding is
-outweighed by the cost of waiting, and where sufficient information has been
-gathered to minimize risk.
-
-Furthermore, ArchHypo moves beyond mere identification of uncertainty to
-actionable engineering. It proposes "formulating a technical plan based on each
-hypothesis' assessment, incorporating measures able to mitigate its impact and
-reduce uncertainty." This might involve creating architectural spikes,
-implementing tracer bullets, or designing abstraction layers that isolate the
-uncertain component. Through this philosophical lens, architecture becomes an
-iterative, evidence-based process that can be safely distributed among team
-members, as the decision-making criteria are explicit rather than hidden within
-an expert's intuition.
+By explicitly documenting uncertainties, ArchHypo allows for the strategic
+postponement of decisions. This aligns with the "Continuous Architecture"
+principle of delaying design decisions until the "Responsible Moment"—the point
+where the cost of deciding is outweighed by the cost of waiting, and sufficient
+information is available to minimize risk. Rather than making premature
+commitments that lead to brittle systems, teams formulate technical plans based
+on hypothesis assessment to mitigate impact and reduce uncertainty. This
+evidence-based process allows decision-making to be safely distributed among
+team members.
 
 \section{The Practical Contribution: From Theory to Tooling}
 
-While ArchHypo offers a robust theoretical framework for managing architectural
-uncertainty, its practical application in real-world scenarios has encountered
-significant friction. Theoretical elegance does not always translate to
-operational efficiency without the appropriate support mechanisms. Empirical
-research conducted to evaluate ArchHypo in industrial settings, although
-demonstrating benefits such as a structured approach to architectural work,
-revealed "significant adoption challenges."
+While ArchHypo offers a robust theoretical framework, its practical application
+faces significant friction due to the high cognitive load required to shift
+from a feature-centric to a hypothesis-centric mindset. Observational studies
+indicate that without guidance, teams find the technique hard to learn,
+particularly regarding mapping risks and defining action plans.
 
-The cognitive load required to shift from a feature-centric mindset to a
-hypothesis-centric mindset is substantial. In observational studies, the
-research team identified the "learning curve and process adjustments required
-for ArchHypo's adoption as significant challenges that could hinder its
-widespread adoption." Engineering teams, often under pressure to deliver
-functional requirements, found the manual management of hypotheses to be
-administratively burdensome. Specifically, participants found the technique
-"hard to learn, particularly in mapping risks, specifying hypotheses, and
-defining action plans." Without guidance, the specification of hypotheses was
-inconsistent, and the link between a hypothesis and its technical mitigation
-plan was often tenuous.
+There is a strong need for tool support to manage these hypotheses and execute
+action plans to lessen dependency on senior architects. To address this, the
+primary practical contribution of this capstone is the design and development
+of HypoStage. As an ArchHypo plugin for Backstage, HypoStage integrates
+directly into the developer's existing workflow within an Internal Developer
+Portal (IDP).
 
-These findings underscored a critical gap in the current state of the art:
-there is "a strong need for better guidance and, crucially, tool support to
-manage hypotheses and execute action plans, which could lessen team dependency
-on architects." If the goal is to democratize architectural decision-making,
-the method must be supported by tooling that guides less experienced developers
-through the process, reducing the reliance on the tacit knowledge of senior
-architects.
-
-Therefore, the primary practical contribution of this capstone is the design
-and development of \textbf{HypoStage}. Recognizing the industry trend towards
-Internal Developer Portals (IDPs) as central hubs for engineering operations,
-HypoStage is defined as an "ArchHypo plugin for Backstage." By integrating
-directly into the developer's existing workflow within the Backstage ecosystem,
-HypoStage aims to lower the barrier to entry for Hypothesis Engineering.
-
-HypoStage provides a comprehensive digital structure that operationalizes the
-theoretical concepts of ArchHypo. It includes features for "Uncertainty
-Assessment, Quality Attributes Tracking, and Technical Planning capabilities,"
-allowing teams to document hypotheses, score them based on impact and
-uncertainty, and track the execution of experimental mitigation plans. Through
-this tool, this work aims to bridge the gap between the theoretical promise of
-decentralized decision-making and the practical reality of fast-paced software
-development, finally resolving the paradox of architectural decision-making.
+HypoStage operationalizes ArchHypo by providing digital structures for
+uncertainty assessment, quality attribute tracking, and technical planning. By
+embedding these capabilities into a tool, this work aims to bridge the gap
+between theoretical decentralization and the practical reality of fast-paced
+development, effectively resolving the paradox of architectural
+decision-making.

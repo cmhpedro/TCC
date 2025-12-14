@@ -1,1 +1,201 @@
-\chapter{Use case}
+\chapter{Applying HypoStage to the Catch Solve Start-up}
+
+This chapter demonstrates the practical application of the HypoStage tool by
+revisiting the "Catch Solve" case study presented by \cite{UseCase}. In the
+original study, the ArchHypo technique was applied manually through meetings
+and interviews to manage architectural uncertainty in a web testing start-up.
+This chapter reconstructs that experience, illustrating how HypoStage would be
+used to digitize, manage, and track the same architectural hypotheses,
+assessments, and technical plans described in the literature.
+
+By mapping the real-world decisions faced by Catch Solve to the specific
+functional capabilities of HypoStage detailed in Chapter 3, we provide a
+concrete walkthrough of the tool's workflow from elicitation to resolution.
+
+\section{System Context and Entity Registration}
+
+Before managing hypotheses, the software system under analysis must be
+contextually defined. As described in Chapter 3, HypoStage integrates with the
+Backstage Catalog to link hypotheses directly to software entities.
+
+In the context of Catch Solve, the primary system is a platform that offers
+testing and monitoring services for web applications. The first step in the
+HypoStage workflow is navigating to the Catch Solve Platform entity within the
+developer portal. By anchoring the hypothesis to this entity, all subsequent
+architectural decisions remain traceable to the specific component they affect.
+
+\section{Phase 1: Hypothesis Elicitation}
+
+The first phase involves capturing the architectural uncertainties identified
+by the development team. In the manual study, this was done via a meeting with
+the technical lead. In HypoStage, this is achieved using the Hypothesis
+Management interface to create structured records.
+
+\subsection{Defining the Availability Hypothesis}
+
+One of the initial concerns raised by Catch Solve was that "The lack of
+redundancy can cause problems with application availability for the customers".
+
+Using HypoStage, a user would create a new hypothesis with the following
+structured data:
+
+Statement: The lack of redundancy can cause problems with application
+availability for the customers.
+
+Quality Attribute: Availability.
+
+Source Type: Solution (referring to the current architectural limitation).
+
+Status: Open.
+
+\subsection{Defining the Scalability Hypothesis}
+
+A second major concern was the manual creation of tests, which limited the
+start-up's ability to scale. The team hypothesized that "Test templates can be
+used to generate tests for different applications".
+
+In HypoStage, this entry would be recorded as:
+
+Statement: Test templates can be used to generate tests for different
+applications.
+
+Quality Attribute: Reusability.
+
+Source Type: Requirement (focusing on the need to optimize the test creation
+process).
+
+Status: Open.
+
+\section{Phase 2: Uncertainty and Impact Assessment}
+
+Once the hypotheses are documented, HypoStage requires a quantitative
+assessment to prioritize them. The tool utilizes a 5-point Likert scale for
+both Uncertainty and Impact.
+
+\subsection{Assessing Availability}
+
+In the case study, the team realized that implementing redundancy was not
+immediately critical because the application was not mission-critical and
+customers had not complained. Furthermore, the team already knew how to
+implement redundancy if needed (low uncertainty).
+
+HypoStage Input:
+
+Uncertainty Rating: 1 (Very Low) — Rationale: The solution is known.
+
+Impact Rating: 2 (Low) — Rationale: Current customer base tolerates occasional
+downtime.
+
+\subsection{Assessing Test Templates}
+
+Conversely, the "Test Templates" hypothesis presented a significant challenge.
+The founder did not know how to implement parameterized tests (high
+uncertainty) and recognized that failure here would affect the core execution
+component (high impact).
+
+HypoStage Input:
+
+Uncertainty Rating: 5 (Very High) — Rationale: Implementation path is unknown.
+
+Impact Rating: 5 (Very High) — Rationale: Affects core business scalability.
+
+The Visualization feature of HypoStage would immediately highlight this
+contrast.
+
+\section{Phase 3: Technical Planning}
+
+HypoStage moves beyond simple documentation by allowing teams to attach
+executable Technical Plans to each hypothesis.
+
+\subsection{Planning for Availability (The Trigger)}
+
+Since the availability hypothesis had low impact and uncertainty, the decision
+was to postpone the architectural change. The plan was to monitor the system
+and revisit the decision only if the customer base grew.
+
+In HypoStage, a Technical Planning Item is added to this hypothesis:
+
+Action Type: Architectural Trigger.
+
+Description: Monitor unavailability reports. Revisit redundancy architecture if
+new customer count exceeds threshold.
+
+\subsection{Planning for Test Templates (The Spike)}
+
+For the high-risk "Test Templates" hypothesis, the team needed to reduce
+uncertainty through experimentation. The study describes using a "Tracer
+Bullet" to create a reusable template instance and an "Architecture Spike" to
+investigate existing test suites.
+
+In HypoStage, two planning items are created:
+
+Action Type: Tracer Bullet.
+
+Description: "Create a single reusable test template instance to valid
+integration with the current runner."
+
+Action Type: Architectural Spike.
+
+Description: "Analyze existing customer test suites to identify recurrent
+verification patterns."
+
+\section{Phase 4: Execution, Evidence, and Evolution}
+
+The power of HypoStage lies in its lifecycle tracking. As time progresses, the
+team returns to the tool to update the status based on the results of their
+technical plans.
+
+\subsection{Ten Months Later: Re-evaluating Test Templates}
+
+The case study reported that after 10 months, students had implemented proofs
+of concept (PoC), and a feature to check for broken URLs was successfully
+introduced.
+
+Using HypoStage, the team updates the hypothesis to reflect this progress:
+
+Evidence URLs: The user adds links to the student PoC repositories and the pull
+request for the "Broken URL" feature.
+
+Re-Assessment:
+
+Uncertainty: Downgraded from 5 (Very High) to 2 (Low).
+
+Impact: Downgraded from 5 (Very High) to 2 (Low).
+
+Status: Changed from "Open" to "Validated".
+
+\subsection{Handling the Availability Trigger}
+
+During the same period, the availability hypothesis remained stable. However,
+the team implemented some database redundancy for maintainability reasons,
+which had the side effect of improving availability.
+
+In HypoStage, this evolution is recorded by adding a comment to the hypothesis
+history or linking a new "Maintainability" hypothesis that references the
+original "Availability" concern. This captures the "side effect" nature of the
+architectural evolution described in the study.
+
+\section{Conclusion}
+
+This walkthrough illustrates how HypoStage transforms the abstract ArchHypo
+framework into a concrete, manageable workflow. By using the Catch Solve data,
+we demonstrated how the tool supports the full lifecycle of architectural
+decision-making:
+
+Elicitation: Converting vague concerns into structured Hypothesis Entities
+linked to the Backstage Catalog.
+
+Assessment: Using the Likert Scale Interface to visually distinguish between
+"postponable" decisions (Availability) and "critical" investigations (Test
+Templates).
+
+Planning: Assigning specific Technical Plans (Triggers vs. Spikes) to
+operationalize the response to uncertainty.
+
+Tracking: Using Evidence URLs and Status Updates to provide an audit trail of
+how uncertainty was reduced over time.
+
+While the original study relied on periodic meetings and manual documentation,
+HypoStage enables this process to occur asynchronously and continuously within
+the developer's native environment, ensuring that architectural knowledge
+remains visible, accessible, and actionable.

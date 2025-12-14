@@ -96,10 +96,10 @@
 
 %%%%%%%%%%%%%%%% DEDICATÓRIA, AGRADECIMENTOS, RESUMO/ABSTRACT %%%%%%%%%%%%%%%%%%
 
-\begin{dedicatoria}
-	Esta seção é opcional e fica numa página separada; ela pode ser usada para
-	uma dedicatória ou epígrafe.
-\end{dedicatoria}
+% \begin{dedicatoria}
+% 	Esta seção é opcional e fica numa página separada; ela pode ser usada para
+% 	uma dedicatória ou epígrafe.
+% \end{dedicatoria}
 
 % Reinicia o contador de páginas (a próxima página recebe o número "i") para
 % que a página da dedicatória não seja contada.
@@ -110,10 +110,8 @@
 % esta página. A epígrafe, obviamente, é opcional; é possível colocar
 % epígrafes em todos os capítulos. O comando "\chapter*" faz esta seção
 % não ser incluída no sumário.
-\chapter*{Agradecimentos}
-\epigrafe{Do. Or do not. There is no try.}{Mestre Yoda}
-
-Agradecer.
+% \chapter*{Agradecimentos}
+% \epigrafe{Do. Or do not. There is no try.}{Mestre Yoda}
 
 \input{contents/abstract.tex}
 
@@ -145,19 +143,14 @@ Agradecer.
 
 %%%%% Listas criadas manualmente
 
-%\chapter*{Lista de abreviaturas}
-% \disablenewpage{\chapter*{Lista de abreviaturas}}
+\chapter*{List of Abbreviations}
 
-% \begin{tabular}{rl}
-% 	CFT  & Transformada contínua de Fourier (\emph{Continuous Fourier Transform})          \\
-% 	DFT  & Transformada discreta de Fourier (\emph{Discrete Fourier Transform})            \\
-% 	EIIP & Potencial de interação elétron-íon (\emph{Electron-Ion Interaction Potentials}) \\
-% 	STFT & Transformada de Fourier de tempo reduzido (\emph{Short-Time Fourier Transform}) \\
-% 	ABNT & Associação Brasileira de Normas Técnicas                                        \\
-% 	URL  & Localizador Uniforme de Recursos (\emph{Uniform Resource Locator})              \\
-% 	IME  & Instituto de Matemática e Estatística                                           \\
-% 	USP  & Universidade de São Paulo
-% \end{tabular}
+\begin{tabular}{rl}
+	SA       & Software Architecture       \\
+	ArchHypo & Architecture Hypothesis     \\
+	IDP      & Internal Developer Portal   \\
+	NFR      & Non-Functional Requirements \\
+\end{tabular}
 
 % Sumário (obrigatório)
 \tableofcontents
@@ -203,6 +196,7 @@ Agradecer.
 \input{contents/chapters/chapter-03}
 \input{contents/chapters/chapter-04}
 \input{contents/chapters/chapter-05}
+\nocite{*}
 
 %%%%%%%%%%%%%%% SEÇÕES FINAIS (BIBLIOGRAFIA E ÍNDICE REMISSIVO) %%%%%%%%%%%%%%%%
 
@@ -216,11 +210,10 @@ Agradecer.
 
 % A bibliografia é obrigatória
 
-% \printbibliography[
-%   title=\refname\label{sec:bib}, % "Referências", recomendado pela ABNT
-%   %title=\bibname\label{sec:bib}, % "Bibliografia"
-%   heading=bibintoc, % Inclui a bibliografia no sumário
-% ]
+\printbibliography[
+	title=\refname\label{sec:bib}, % "Referências", recomendado pela ABNT
+	%title=\bibname\label{sec:bib}, % "Bibliografia"
+	heading=bibintoc, ]% Inclui a bibliografia no sumário
 
 % \printindex % imprime o índice remissivo no documento (opcional)
 

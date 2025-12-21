@@ -4,18 +4,17 @@ This chapter establishes the theoretical foundations necessary for the
 development of the proposed solution. It begins by contextualizing Software
 Architecture within dynamic and agile environments, identifying the friction
 between rapid delivery and architectural integrity. Subsequently, it delineates
-the central problem motivating this work: the Paradox of Software Architecture
-Decision-Making. To address this paradox, the chapter introduces the concepts
-of Hypothesis Engineering and the ArchHypo framework, detailing its processes,
-assessment metrics, and the pattern language that supports technical planning.
-Finally, the chapter presents the practical gap identified in empirical
-studies, justifying the necessity for the development of specific tooling to
-support these practices.
+the central problem motivating this work: the dissonance between distributed
+team structures and centralized decision-making methods. To address this gap,
+the chapter introduces the concept of Internal Developer Portals (IDPs) as
+essential infrastructure for team autonomy. Finally, it details the principles
+of Hypothesis Engineering and the ArchHypo framework, justifying the necessity
+for specific tooling to operationalize these practices.
 
 \section{The Role of Software Architecture in Agile and High-Flow Environments}
 
-Software Architecture is a fundamental concept in software development, forming
-the structural foundation of systems and ensuring their long-term
+Software Architecture (SA) is a fundamental concept in software development,
+forming the structural foundation of systems and ensuring their long-term
 sustainability. While early definitions characterized SA as a composition of
 elements, form, and rationale, modern definitions have evolved to incorporate
 deeper insights into the dynamics of system evolution. Contemporary definitions
@@ -42,13 +41,14 @@ significant upfront design that contradicts core agile principles.
 
 In rapidly evolving business environments, such as software startups, new
 requirements continually reshape architectural demands. In these dynamic
-scenarios, architecture anti-patterns—such as the Big Ball of Mud—may emerge,
+scenarios, architecture anti-patterns—such as the "Big Ball of Mud"—may emerge,
 posing risks to effective architectural evolution and resulting in systems that
-struggle to maintain proper modularity and scalability. This anti-pattern often
-emerges when immediate demands and incremental fixes override deliberate
-architectural planning. Consequently, engineering teams must balance speed with
-quality to ensure sustainable, adaptable architectures that meet evolving
-business demands.
+struggle to maintain proper modularity and scalability.
+
+This anti-pattern often emerges when immediate demands and incremental fixes
+override deliberate architectural planning. Consequently, engineering teams
+must balance speed with quality to ensure sustainable, adaptable architectures
+that meet evolving business demands.
 
 \subsection{Trends in Evolutionary Architecture}
 
@@ -79,27 +79,26 @@ across development teams. The socio-technical approach promotes team autonomy
 and empowerment, advocating for decision-making processes that include all team
 members, regardless of their experience levels.
 
-\section{The Paradox of Software Architecture Decision-Making}
+\section{The Dissonance in Architectural Decision-Making}
 
 Despite the industry's aspiration for decentralized, autonomous teams capable
 of maintaining a fast flow of requirements, a significant theoretical and
-practical barrier exists. We identifies this barrier as the \textbf{Paradox of
-	Software Architecture Decision-Making}.
+practical barrier exists. We identify this barrier as the operational gap
+between intent and method.
 
-\subsection{The Central Paradox}
+\subsection{The Conflict: Autonomy vs. Tacit Knowledge}
 
-The Paradox of Software Architecture Decision-Making highlights the conflicting
-dynamics between industry reports advocating for decentralized, team-driven
-architectural decisions to enable a fast flow of requirements, and academic
-research indicating that existing methods for deriving SA still heavily depend
-on the tacit knowledge of experienced practitioners.
+A fundamental conflict exists between industry reports advocating for
+decentralized, team-driven architectural decisions and academic research
+indicating that existing methods for deriving SA still heavily depend on the
+tacit knowledge of experienced practitioners.
 
 While the industry moves toward distributed architectural ownership, the
 current methods and frameworks continue to reinforce centralized
-decision-making. This paradox creates a self-reinforcing cycle: while
-organizations may aim for a decentralized approach to support a fast flow of
-requirements, they remain dependent on expert-driven methods that, by design,
-limit the involvement of less experienced team members.
+decision-making. This creates a self-reinforcing cycle: while organizations may
+aim for a decentralized approach to support a fast flow of requirements, they
+remain dependent on expert-driven methods that, by design, limit the
+involvement of less experienced team members.
 
 \subsection{Reliance on Tacit Knowledge}
 
@@ -130,12 +129,53 @@ highlighted several other gaps in existing architectural derivation methods:
 This points to a clear need for tools to aid architects, suggesting patterns
 and supporting decision-making to reduce dependency on seasoned experts.
 
+\section{Internal Developer Portals and Backstage}
+
+To bridge the gap between autonomous teams and the complex ecosystem of modern
+software development, the industry has turned toward \textit{Platform
+	Engineering} and the implementation of Internal Developer Portals (IDPs).
+
+\subsection{The Role of Developer Portals}
+
+An Internal Developer Portal (IDP) serves as the primary interface between
+developers and the underlying platform infrastructure. Unlike a simple wiki or
+a project management tool, an IDP is an operational hub that aggregates tools,
+services, documentation, and data into a unified "pane of glass."
+
+The primary goal of an IDP is to reduce cognitive load. By abstracting the
+complexity of infrastructure and standardizing workflows, IDPs enable "Golden
+Paths"—recommended, supported, and automated paths for building and deploying
+software. This aligns directly with the goal of decentralized architecture:
+providing teams with the autonomy to build and own their services while
+ensuring governance and best practices are baked into the tooling.
+
+\subsection{Backstage: The Open Platform for Building Developer Portals}
+
+Backstage is an open-source framework for building IDPs, originally developed
+by Spotify and now hosted by the Cloud Native Computing Foundation (CNCF). It
+has emerged as the de facto standard for building developer portals due to its
+extensibility and "catalog-first" philosophy.
+
+Backstage operates on three core pillars:
+\begin{enumerate}
+	\item \textbf{Software Catalog:} A centralized system that tracks ownership and metadata for all software components (services, libraries, websites, pipelines).
+	\item \textbf{Software Templates:} Scaffolding tools that allow developers to spin up new projects with best practices automatically configured.
+	\item \textbf{TechDocs:} A documentation-as-code solution that renders Markdown files living with the code into a searchable documentation site.
+\end{enumerate}
+
+Crucially, Backstage is built on a plugin architecture. This allows
+organizations to extend the portal's functionality by integrating custom tools
+directly into the developer's daily workflow. It is within this plugin
+ecosystem that the proposed solution, HypoStage, is situated, leveraging the
+existing adoption of IDPs to introduce architectural hypothesis management
+without forcing developers to switch contexts.
+
 \section{Hypothesis Engineering and Uncertainty Management}
 
-To resolve the paradox of decision-making and enable decentralized
-architecture, it is necessary to move away from reliance on tacit intuition
-toward a more explicit management of the unknowns. This is achieved through
-\textbf{Hypothesis Engineering}.
+To resolve the decision-making gap and enable decentralized architecture, it is
+necessary to move away from reliance on tacit intuition toward a more explicit
+management of the unknowns. This is achieved through \textbf{Hypothesis
+	Engineering}.
 
 \subsection{The Concept of Hypothesis Engineering}
 
@@ -145,7 +185,7 @@ continuously validating product assumptions, transforming them into hypotheses,
 prioritizing and testing them following the scientific method to support or
 refute them.
 
-In this context, the word hypothesis focuses on business assumptions that
+In this context, the word "hypothesis" focuses on business assumptions that
 should be evaluated before start-ups develop their business models. However,
 this concept is extended here to manage the uncertainty of architectural
 decisions.
@@ -266,31 +306,16 @@ participant explicitly noted that "train[ing] the team a little more on how to
 find, map risk scenarios, and define the necessary actions... would make the
 team less dependent on the team of architects".
 
-\subsection{The Necessity of Tool Support}
+\subsection{The Integration Necessity}
 
 The identified difficulties highlight a strong need for better guidance and,
-crucially, \textbf{tool support to manage hypotheses and execute action plans},
-which could lessen team dependency on architects. The current literature notes
-that about a third of analyzed architectural derivation approaches lack tool
-support.
+crucially, \textbf{tool support to manage hypotheses and execute action plans}.
+However, standalone tools often suffer from low adoption because they require
+developers to leave their primary workflow.
 
-Tools that provide more guidance on using the technique can be developed to
-reduce its learning curve. Without effective tools to aid architects,
-suggesting patterns and supporting decision-making, the dependency on seasoned
-experts remains a bottleneck.
-
-\subsection{Integration with Developer Platforms}
-
-To bridge this gap, plugins of existing tools could introduce support for
-hypotheses management. By integrating with project management platforms or
-developer portals, a tool can facilitate seamless adoption into diverse
-development workflows.
-
-The development of \textbf{HypoStage}, a dedicated software tool, aims to
-operationalize the ArchHypo framework. It intends to allow teams to explicitly
-document and manage architectural hypotheses, assess them based on impact and
-uncertainty, and define and track technical action plans. This technological
-intervention addresses the core of the Paradox of Software Architecture
-Decision-Making by providing the structural scaffolding necessary for less
-experienced practitioners to engage in decentralized, high-quality
-architectural decision-making.
+This justifies the decision to integrate ArchHypo into an IDP like Backstage.
+By embedding hypothesis management into the same platform where developers
+already manage services, documentation, and deployments, we can reduce the
+cognitive load of adoption. This integration—operationalized in the proposed
+\textbf{HypoStage} plugin—aims to bridge the gap between theoretical agility
+and the practical reality of fast-paced development.

@@ -7,11 +7,11 @@ the empirical gaps identified in the literature regarding the ArchHypo
 framework, this chapter details the development of a software tool designed to
 operationalize decentralized architectural decision-making. The chapter begins
 by justifying the necessity of a technological intervention to resolve the
-Paradox of Software Architecture Decision-Making. It then proceeds to describe
-the solution's integration within the Backstage internal developer portal,
-details the functional requirements for managing the hypothesis lifecycle, and
-concludes with a technical examination of the software architecture and the
-open-source strategy adopted for the project.
+operational gap between architectural intent and execution. It then proceeds to
+describe the solution's integration within the Backstage internal developer
+portal, details the functional requirements for managing the hypothesis
+lifecycle, and concludes with a technical examination of the software
+architecture and the open-source strategy adopted for the project.
 
 \section{Justification for Tooling Support}
 
@@ -47,11 +47,11 @@ centralization of architectural authority.
 
 \subsection{Technological Intervention as a Scaffolding Mechanism}
 
-This capstone project posits that the Paradox of Software Architecture
-Decision-Making — where the desire for decentralized autonomy conflicts with
-the reliance on centralized tacit knowledge—cannot be resolved through process
-changes alone. It requires a technological intervention. The development of a
-dedicated software tool aims to operationalize the ArchHypo framework.
+This capstone project posits that the dissonance identified in Chapter 2 —
+where the desire for decentralized autonomy conflicts with the reliance on
+centralized tacit knowledge—cannot be resolved through process changes alone.
+It requires a technological intervention. The development of a dedicated
+software tool aims to operationalize the ArchHypo framework.
 
 By embedding the methodological rules, assessment scales, and technical
 patterns directly into a software interface, the tool provides the necessary
@@ -71,13 +71,13 @@ into the daily workflow of engineering teams.
 
 HypoStage is defined as an ArchHypo plugin for Backstage. It is not merely a
 documentation repository but an active management tool that integrates
-architectural hypothesis management into your Backstage environment, enabling
-teams to document, track, and validate architectural decisions effectively. The
-tool is designed to guide users through the lifecycle of a hypothesis, from
+architectural hypothesis management into the organization's IDP, enabling teams
+to document, track, and validate architectural decisions effectively. The tool
+is designed to guide users through the lifecycle of a hypothesis, from
 elicitation to validation or refutation, ensuring that uncertainty is treated
 as a first-class citizen in the software delivery process.
 
-A key design principle of HypoStage is its capability to seamlessly integrates
+A key design principle of HypoStage is its capability to seamlessly integrate
 with Backstage's catalog and entity system. This ensures that architectural
 hypotheses are not abstract entities but are directly linked to the software
 components, APIs, and resources they affect, promoting traceability and
@@ -97,10 +97,7 @@ hub for software development teams, aggregating infrastructure, services, and
 documentation. By placing hypothesis management within the IDP, HypoStage
 ensures that architectural decision-making occurs in the same environment where
 development happens. This visibility is crucial for decentralization, as it
-democratizes access to architectural rationale. Furthermore, the modular
-architecture of HypoStage allows it to be integrated with existing developer
-portals, facilitating seamless adoption, leveraging Backstage's extensible
-plugin architecture to reach a wide audience of practitioners.
+democratizes access to architectural rationale.
 
 \section{Functional Requirements and Implementation}
 

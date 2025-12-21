@@ -21,33 +21,35 @@ startups where requirements emerge frequently. Practitioners must balance speed
 with quality to ensure adaptable architectures; failing to do so results in
 technical debt that paralyzes future development.
 
-\section{The Central Paradox: Decentralization vs. Tacit Knowledge}
+\section{The Operational Gap: Agility Without Support}
 
-A profound dissonance exists between the industry's organizational aspirations
-and the reality of architectural design methods. Modern trends, such as DevOps
-and Team Topologies, advocate for democratizing decision-making to empower
-autonomous teams and accelerate value flow.
+While the software industry has embraced modern trends such as DevOps and Team
+Topologies to empower autonomous teams and accelerate value flow, a significant
+gap remains between these agile aspirations and the methodological support
+available for architectural decision-making.
 
-However, this creates a "Paradox of Software Architecture Decision-Making".
-While the industry pushes for decentralized, team-driven decisions, academic
-evidence shows that existing methods for deriving architecture heavily rely on
-the tacit knowledge of experienced practitioners. This reliance assumes the
-presence of seasoned architects who can intuitively synthesize requirements—a
-resource that is often scarce or expensive.
+The industry increasingly demands that architecture evolve continuously
+alongside code. However, existing methods for deriving and managing
+architecture often lag behind, remaining abstract, manual, or disconnected from
+the daily development workflow. There is a distinct lack of tooling that allows
+teams to systematically manage architectural evolution without slowing down the
+development pipeline. Without integrated support, teams struggle to apply
+architectural rigor in real-time, often resorting to ad-hoc decisions that
+bypass long-term structural considerations.
 
-This dependency creates bottlenecks and limits the applicability of these
-methods in teams lacking senior members, effectively concentrating power and
-contradicting the ethos of distributed ownership. Consequently, a
-self-reinforcing cycle emerges: organizations attempt to decentralize to handle
-fast-flowing requirements, but are obstructed by frameworks that inherently
-require centralization, blocking the adoption of a true socio-technical
-approach.
+This deficiency creates a barrier to true agility. Organizations attempt to
+decentralize ownership to handle fast-flowing requirements, but they lack the
+concrete instruments to guide these decisions effectively. Consequently, the
+evolution of software architecture becomes a friction point rather than an
+enabler, highlighting the urgent need for frameworks and tools that bridge the
+gap between high-level architectural theory and the operational reality of
+continuous delivery.
 
 \section{The Philosophical Solution: ArchHypo}
 
-To resolve this paradox, this work builds upon the principles of ArchHypo, a
-technique that shifts the view of architecture from a set of facts to a set of
-experiments. ArchHypo employs hypotheses engineering to manage the
+To address this operational challenge, this work builds upon the principles of
+ArchHypo, a technique that shifts the view of architecture from a set of facts
+to a set of experiments. ArchHypo employs hypotheses engineering to manage the
 uncertainties inherent in software architecture.
 
 By explicitly documenting uncertainties, ArchHypo allows for the strategic
@@ -69,15 +71,15 @@ indicate that without guidance, teams find the technique hard to learn,
 particularly regarding mapping risks and defining action plans.
 
 There is a strong need for tool support to manage these hypotheses and execute
-action plans to lessen dependency on senior architects. To address this, the
-primary practical contribution of this capstone is the design and development
-of HypoStage. As an ArchHypo plugin for Backstage, HypoStage integrates
-directly into the developer's existing workflow within an Internal Developer
-Portal (IDP).
+action plans, moving architectural management out of abstract documentation and
+into the engineering lifecycle. To address this, the primary practical
+contribution of this capstone is the design and development of HypoStage. As an
+ArchHypo plugin for Backstage, HypoStage integrates directly into the
+developer's existing workflow within an Internal Developer Portal (IDP).
 
 HypoStage operationalizes ArchHypo by providing digital structures for
 uncertainty assessment, quality attribute tracking, and technical planning. By
 embedding these capabilities into a tool, this work aims to bridge the gap
-between theoretical decentralization and the practical reality of fast-paced
-development, effectively resolving the paradox of architectural
-decision-making.
+between theoretical agility and the practical reality of fast-paced
+development, providing the necessary infrastructure to support continuous
+architectural evolution.

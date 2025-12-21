@@ -1,71 +1,34 @@
 \chapter{Conclusion: Contributions and Future Directions}
 
-\section{Summary of Contributions: The Artifact and the Paradox}
+\section{Summary of Contributions: Filling the Tooling Void}
 
-The central investigation of this capstone project has been driven by a
-critical examination of the tension between the industry's demand for agility
-and the academic reality of architectural design methods. Through a systematic
-mapping of the literature and an analysis of grey literature, this work
-identified and defined the Paradox of Software Architecture Decision-Making.
-This paradox encapsulates the conflict where the industry trend towards
-decentralized, autonomous teams—essential for maintaining a fast flow of
-requirements—collides with the methodological reality that current
-architectural derivation techniques heavily rely on the tacit knowledge of
-experienced practitioners. This reliance creates a bottleneck, effectively
-reinforcing centralized decision-making structures and obstructing the
-practical adoption of socio-technical architecture approaches.
+This capstone project addresses a fundamental operational void in modern
+software architecture: the critical absence of specialized tooling to manage
+architectural uncertainty. While the theoretical foundations for decentralized
+decision-making exist in frameworks like ArchHypo, their practical application
+has been stifled by a reliance on manual, high-friction processes that
+development teams struggle to sustain.
 
-The theoretical resolution to this paradox lies in ArchHypo, a technique that
-shifts the architectural paradigm from static decision-making to dynamic
-hypothesis engineering. By framing architectural uncertainties as testable
-hypotheses, ArchHypo offers a structured pathway to manage risk and distribute
-decision-making power. However, theoretical frameworks alone are insufficient
-to change organizational behavior. Empirical evaluations of ArchHypo revealed
-that while the technique is effective, it presents a steep learning curve and
-administrative burden that can hinder widespread adoption. Consequently, this
-project posits that the Paradox of Software Architecture Decision-Making cannot
-be resolved through process changes alone. It requires a technological
-intervention.
+The primary contribution of this work is the delivery of the missing
+technological link: **HypoStage**.
 
-To address this critical gap, the primary contribution of this capstone project
-is the design and development of HypoStage, a specialized software artifact
-designed to operationalize the ArchHypo framework. Recognizing that modern
-engineering organizations are increasingly adopting IDPs to centralize their
-operations, HypoStage is architected as an ArchHypo plugin for Backstage. This
-strategic integration ensures that hypothesis management is not an extraneous
-activity but is embedded directly into the developer's daily workflow.
+HypoStage is a purpose-built software artifact designed to operationalize
+Hypothesis Engineering. It transforms the abstract principles of architectural
+uncertainty—previously managed through ad-hoc documentation or the tacit
+knowledge of senior architects—into a concrete, structured digital workflow. By
+automating the lifecycle of hypothesis elicitation, assessment, and technical
+planning, the tool removes the administrative burden that has historically
+blocked the adoption of evidence-based architectural methods.
 
-HypoStage serves as a tangible solution to the identified gap in tool support
-for managing architectural uncertainty. It translates the abstract concepts of
-Hypothesis Engineering into a concrete digital interface, thereby reducing the
-cognitive load required to adopt the methodology. By automating the
-administrative aspects of the framework, the tool directly addresses the
-documented need for better guidance to lessen team dependency on architects.
-
-The fundamental objective of HypoStage is to operationalize the ArchHypo
-framework. It achieves this by providing a structured environment that
-integrates architectural hypothesis management into your Backstage environment,
-enabling teams to document, track, and validate architectural decisions
-effectively. This operationalization transforms ArchHypo from a theoretical
-concept into a pragmatic engineering practice.
-
-Crucially, HypoStage acts as a mechanism for democratization. By embedding the
-methodological rules, assessment criteria, and workflow steps directly into the
-user interface, the tool provides the structural scaffolding necessary for less
-experienced practitioners to engage in decentralized, high-quality
-architectural decision-making. This scaffolding externalizes the tacit
-knowledge that was previously the exclusive domain of senior architects,
-allowing broader team participation in the architectural process without
-compromising integrity.
-
-In terms of specific capabilities, HypoStage empowers engineering teams to
-Explicitly document and manage architectural hypotheses, assess them based on
-impact and uncertainty, and define and track technical action plans. The tool
-enforces rigor in the assessment process by utilizing Likert scale ratings for
-evaluating Impact and Uncertainty, ensuring that qualitative assessments are
-consistent and comparable across the organization. Through these features,
-HypoStage provides the technological foundation necessary to break the cycle of
-centralization and enable true socio-technical architectural evolution.
+Recognizing that modern engineering organizations are consolidating their
+operations into Internal Developer Portals (IDPs), HypoStage was not built in
+isolation but as a fully integrated plugin for **Backstage**. This strategic
+architectural choice ensures that hypothesis management is embedded directly
+into the developer's "Golden Path." By placing the tool where developers
+already manage their services and deployments, HypoStage bridges the gap
+between architectural intent and daily engineering execution, providing the
+necessary scaffolding for teams to practice continuous, decentralized
+architecture effectively.
 
 \section{Results: Insights Empowered by the Tool}
 
@@ -80,11 +43,12 @@ the tool unlocks several critical advantages for software development projects.
 One of the most significant impacts of applying this methodology is the
 enhancement of risk visibility. In complex projects, architectural risks are
 often opaque or implicit. The structured elicitation and assessment of
-hypotheses supported by the tool allow for a more clear visualization of the
-risks that could threaten the final delivery of the project. By making these
-risks explicit and quantifiable through impact and uncertainty scores, teams
-can prioritize their efforts more effectively, focusing on the most critical
-uncertainties that could jeopardize project success.
+hypotheses supported by the tool allow for a clearer visualization of the risks
+that could threaten the final delivery of the project.
+
+By making these risks explicit and quantifiable through impact and uncertainty
+scores, teams can prioritize their efforts more effectively, focusing on the
+most critical uncertainties that could jeopardize project success.
 
 \subsubsection{Sustainable Task Distribution and Planning}
 
@@ -103,12 +67,11 @@ requirements.
 The systematic management of uncertainty contributes directly to the
 sustainability of the development process. Empirical evidence suggests that the
 adoption of this approach benefits projects by providing predictability,
-security, transparency, quality, and sustainable pace. Furthermore, the
-technique has been shown to contribute significantly to decision-making
-processes and process efficiency. By reducing the chaos associated with
-unforeseen architectural blockers, teams can maintain a steady velocity and
-deliver higher-quality software that meets both functional and non-functional
-requirements.
+security, transparency, and a sustainable pace. Furthermore, the technique has
+been shown to contribute significantly to decision-making efficiency. By
+reducing the chaos associated with unforeseen architectural blockers, teams can
+maintain a steady velocity and deliver higher-quality software that meets both
+functional and non-functional requirements.
 
 \subsubsection{Reduction of Upfront Design}
 
@@ -119,7 +82,7 @@ design. It achieves this by providing a safety net that supports the strategic
 postponement of decisions while addressing their potential impact. By
 identifying which decisions can be safely delayed and monitoring their
 associated risks, teams can maintain agility and keep their options open until
-the Most Responsible Moment arises.
+the "Most Responsible Moment" arises.
 
 \subsubsection{Informed Decision-Making}
 
@@ -127,9 +90,9 @@ Finally, the ultimate goal of the tool is to elevate the quality of
 architectural decisions. By moving away from intuition-based choices, the
 methodology ensures that decisions are grounded in evidence and analysis. Teams
 that have adopted this approach recognized that the management of hypotheses
-makes the team base the decisions on information. HypoStage facilitates this by
-tracking the results of experiments, spikes, and analytics, ensuring that when
-a decision is finally made, it is backed by data rather than guesswork.
+compels the team to base decisions on information rather than guesses.
+HypoStage facilitates this by tracking the results of experiments, spikes, and
+analytics, ensuring that when a decision is finally made, it is backed by data.
 
 \section{Future Steps: Validation and Research Evolution}
 
@@ -166,12 +129,11 @@ data will help refine both the user experience and the feature set.
 A primary motivation for HypoStage was to mitigate the steep learning curve
 associated with ArchHypo. Consequently, continuous investigation into tools and
 methodologies to improve the implementation of ArchHypo represents an important
-direction for research, potentially expanding its applicability is necessary.
-Future iterations of the tool should focus on features that provide more
-guidance on using the technique can be developed to reduce its learning curve.
-This could include intelligent recommendation systems that suggest potential
-hypotheses based on project characteristics or automated generation of
-technical plans based on historical data.
+direction for research. Future iterations of the tool should focus on
+intelligent features to further reduce this curve. This could include AI-driven
+recommendation systems that suggest potential hypotheses based on project
+characteristics or automated generation of technical plans based on historical
+data.
 
 \subsubsection{Evolution of the Framework via New Patterns}
 

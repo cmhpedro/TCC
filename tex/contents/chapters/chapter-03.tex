@@ -115,11 +115,61 @@ robust form interface that captures essential data points such as the
 Hypothesis Statement, Source Type (e.g., Requirements, Solution), and
 associated Entity References from the catalog.
 
+The process of creating a hypothesis in HypoStage follows a step-by-step
+workflow, as illustrated in Figures~\ref{fig:create-hypothesis-1},
+\ref{fig:create-hypothesis-2}, and \ref{fig:create-hypothesis-3}. Users begin
+by accessing the hypothesis creation form, where they can input the hypothesis
+statement and select relevant metadata. The interface guides users through each
+step, ensuring that all necessary information is captured before the hypothesis
+is created.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/create-hypothesis-1}
+	\caption{Step 1: Accessing the hypothesis creation form in HypoStage}
+	\label{fig:create-hypothesis-1}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/create-hypothesis-2}
+	\caption{Step 2: Filling in the hypothesis details and metadata}
+	\label{fig:create-hypothesis-2}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/create-hypothesis-3}
+	\caption{Step 3: Completing the hypothesis creation process}
+	\label{fig:create-hypothesis-3}
+\end{figure}
+
 Furthermore, the tool supports Status Tracking, allowing teams to monitor
 hypothesis lifecycle from creation to validation. The system supports multiple
 statuses for hypotheses, such as Open, In Review, Validated, Discarded, and
 Trigger-Fired. This explicit tracking ensures that architectural uncertainties
 are not forgotten but are actively managed until resolution.
+
+Once hypotheses are created, users can view them in a comprehensive list view,
+as shown in Figure~\ref{fig:hypothesis-list}, which provides an overview of all
+hypotheses and their current status. Clicking on a specific hypothesis opens
+its detailed page, illustrated in Figure~\ref{fig:hypothesis-page}, where users
+can view complete information, edit details, and track the hypothesis
+lifecycle.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/hypothesis-list}
+	\caption{The list view showing all created hypotheses in HypoStage}
+	\label{fig:hypothesis-list}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/hypothesis-page}
+	\caption{A detailed view of a hypothesis page in HypoStage}
+	\label{fig:hypothesis-page}
+\end{figure}
 
 \subsection{Uncertainty and Impact Assessment}
 
@@ -144,6 +194,35 @@ Architectural Spike, Tracer Bullet, or Prototype — assigned to specific
 entities with target dates and expected outcomes. This directly supports the
 objective to define and track technical action plans associated with each
 hypothesis.
+
+The creation of a technical plan follows a structured process, as demonstrated
+in Figures~\ref{fig:create-tech-plan-1} and \ref{fig:create-tech-plan-2}. Users
+can initiate the creation of a technical plan from within a hypothesis page,
+where they are guided through defining the action type, target entities, and
+expected outcomes. Once created, technical plans are displayed within the
+hypothesis page, as shown in Figure~\ref{fig:tech-plan-list}, providing
+visibility into all planned actions associated with a given hypothesis.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/create-tech-plan-1}
+	\caption{Step 1: Initiating the creation of a technical plan in HypoStage}
+	\label{fig:create-tech-plan-1}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/create-tech-plan-2}
+	\caption{Step 2: Defining the technical plan details and action items}
+	\label{fig:create-tech-plan-2}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/tech-plan-list}
+	\caption{Technical plans displayed within a hypothesis page after creation}
+	\label{fig:tech-plan-list}
+\end{figure}
 
 Additionally, the tool implements Quality Attributes Tracking, enabling users
 to associate hypotheses with specific quality attributes. The system supports a

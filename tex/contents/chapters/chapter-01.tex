@@ -1,18 +1,39 @@
 \chapter{Introduction}
 
+Modern software engineering faces a significant conflict between the demand for
+rapid feature delivery and the necessity of maintaining a stable, sustainable
+Software Architecture (SA). While agile methodologies have successfully
+introduced practices for functional evolution, they provide sparse guidance for
+architectural evolution. This lack of recognized methodological support often
+forces teams into a precarious choice: either performing heavy upfront designs
+that contradict agile principles or allowing the system to degrade into a "Big
+Ball of Mud" where architectural integrity is sacrificed for speed.
+
+This methodological deficiency is compounded by a critical lack of operational
+tooling to support architectural decision-making. As identified in the
+systematic mapping by \cite{SysMap}, existing derivation methods rely heavily
+on the tacit knowledge of experienced architects, offering little support for
+less experienced practitioners or decentralized teams. Furthermore, research by
+\cite{ArchHypo} emphasizes that even when robust frameworks like ArchHypo are
+introduced to manage architectural uncertainty, their manual application
+remains difficult and cognitively demanding. Consequently, a "tooling void"
+exists where architectural management remains disconnected from the daily
+engineering workflow, preventing teams from effectively bridging the gap
+between high-level theory and the operational reality of continuous delivery.
+
 \section{Software Architecture and the Challenge of Rapid Evolution}
 
-In the modern landscape of software engineering, Software Architecture (SA) has
-evolved from a static blueprint into a continuous, dynamic process that is
-critical for business survival. As systems grow in complexity, SA serves as the
-structural foundation that ensures long-term sustainability, acting as a
-strategic asset that dictates an organization's agility in fluctuating markets.
+In the modern landscape of software engineering, SA has evolved from a static
+blueprint into a continuous, dynamic process that is critical for business
+survival. As systems grow in complexity, SA serves as the structural foundation
+that ensures long-term sustainability, acting as a strategic asset that
+dictates an organization's agility in fluctuating markets.
 
 Traditionally, architecture was defined by \cite{Perry1992} tripartite model
 comprising elements (processing, data, and connections), form (relationships
 and weights), and rationale (justification). However, the modern pressure to
 deliver quickly often obfuscates the rationale, causing the form to degrade
-into what is known as a "Big Ball of Mud".
+into what is known as a "Big Ball of Mud", as described by \cite{BBOM}.
 
 The core tension today lies in balancing velocity with stability. While
 architecture was once front-loaded, maintaining integrity while enabling rapid

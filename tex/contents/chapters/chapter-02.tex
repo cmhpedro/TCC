@@ -151,24 +151,38 @@ ensuring governance and best practices are baked into the tooling.
 
 \subsection{Backstage: The Open Platform for Building Developer Portals}
 
-Backstage is an open-source framework for building IDPs, originally developed
-by Spotify and now hosted by the Cloud Native Computing Foundation (CNCF). It
-has emerged as the de facto standard for building developer portals due to its
-extensibility and "catalog-first" philosophy.
+Backstage is an open-source framework for building Internal Developer Portals
+(IDPs), originally developed by Spotify and now hosted by the Cloud Native
+Computing Foundation (CNCF). Due to its extensibility and "catalog-first"
+philosophy, it has emerged as the de facto standard for developer portals.
 
-Backstage operates on three core pillars:
-\begin{enumerate}
-	\item \textbf{Software Catalog:} A centralized system that tracks ownership and metadata for all software components (services, libraries, websites, pipelines).
-	\item \textbf{Software Templates:} Scaffolding tools that allow developers to spin up new projects with best practices automatically configured.
-	\item \textbf{TechDocs:} A documentation-as-code solution that renders Markdown files living with the code into a searchable documentation site.
-\end{enumerate}
+\subsubsection{Architecture and Core Components}
+
+As illustrated in Figure~\ref{fig:backstage}, Backstage is not a rigid
+application but rather a modular ecosystem driven by configuration. The
+architecture is divided into several key interaction layers:
+
+\begin{itemize}
+	\item \textbf{The Core Framework:} The central hub of the application which manages essential utilities such as the \textit{Plugin Loader}, \textit{Router}, \textit{Auth Service}, and \textit{Error Handling}. It acts as the bridge between the configuration and the varied plugins.
+	\item \textbf{Plugin Ecosystem:} Backstage relies heavily on a split-plugin architecture:
+	      \begin{itemize}
+		      \item \textbf{Frontend Plugins:} Handle Views, UI Components, and API Clients to present data to the user.
+		      \item \textbf{Backend Plugins:} Manage API Services, Data Processing, and Storage, communicating directly with the core framework.
+	      \end{itemize}
+	\item \textbf{External Integrations:} The Backend Plugins serve as the gateway to \textit{External Systems \& APIs}, allowing the portal to aggregate data from cloud providers, CI/CD tools, and other infrastructure.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/backstage}
+	\caption{The Backstage organization and platform structure}
+	\label{fig:backstage}
+\end{figure}
 
 Crucially, Backstage is built on a plugin architecture. This allows
 organizations to extend the portal's functionality by integrating custom tools
-directly into the developer's daily workflow. It is within this plugin
-ecosystem that the proposed solution, HypoStage, is situated, leveraging the
-existing adoption of IDPs to introduce architectural hypothesis management
-without forcing developers to switch contexts.
+directly into the developer's daily workflow without forcing developers to
+switch contexts.
 
 \section{Hypothesis Engineering and Uncertainty Management}
 
@@ -225,6 +239,13 @@ uncertainties related to software architecture and enhance decision-making
 processes. It provides a structured framework for software architects and
 developers, enabling them to make uncertainties explicit and manageable.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{contents/images/archhypo-lifecycle-crop}
+	\caption{The ArchHypo decision management lifecycle}
+	\label{fig:archhypo-lifecycle}
+\end{figure}
+
 \subsection{Sources of Uncertainty}
 
 When applying ArchHypo, a team focuses specifically on hypotheses that can
@@ -236,14 +257,14 @@ the \textbf{requirements} and the \textbf{solutions}.
 	\item \textbf{Solution Uncertainty:} This relates to the unknown consequences of current architecture components or candidate solutions. For example, uncertainty regarding whether a specific library is compatible with a required protocol.
 \end{itemize}
 
-\subsection{Assessment: Uncertainty Level and Impact}
+\subsection{Assessment: Uncertainty Level and Impact Level}
 
 Once a hypothesis is identified, it is assessed based on two independent
 dimensions:
 
 \begin{itemize}
 	\item \textbf{Uncertainty Level:} This reflects how far the team is from proving that a hypothesis is true or false. The uncertainty would be high if there is a lack of information to estimate probability or when alternatives have a similar chance to happen.
-	\item \textbf{Impact:} This measures the effort required to transition to a different alternative. It represents the consequences and costs that the uncertainty can cause.
+	\item \textbf{Impact Level:} This measures the effort required to transition to a different alternative. It represents the consequences and costs that the uncertainty can cause.
 \end{itemize}
 
 This assessment is typically performed qualitatively by the team, using a scale
